@@ -1,2 +1,6 @@
----
-# vars file for ansible-role-rhel8-hipaa
+var_sshd_set_keepalive: '0'
+var_system_crypto_policy: FIPS
+rsyslog_remote_loghost_address: logcollector
+var_selinux_policy_name: targeted
+var_selinux_state: enforcing
+var_auditd_flush: data
