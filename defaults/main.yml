@@ -1,13 +1,13 @@
 ---
 # defaults file for rhel8_hipaa
-var_selinux_policy_name: targeted
-var_selinux_state: enforcing
-var_selinuxuser_execmod: 'true'
-var_selinuxuser_execheap: 'false'
-var_selinuxuser_execstack: 'false'
+var_auditd_flush: data
 var_system_crypto_policy: FIPS
 rsyslog_remote_loghost_address: logcollector
-var_auditd_flush: data
+var_selinux_policy_name: targeted
+var_selinux_state: enforcing
+var_selinuxuser_execheap: 'false'
+var_selinuxuser_execmod: 'true'
+var_selinuxuser_execstack: 'false'
 var_sshd_set_keepalive: '0'
 audit_rules_dac_modification_chmod: true
 audit_rules_dac_modification_chown: true
@@ -31,11 +31,15 @@ audit_rules_file_deletion_events_renameat: true
 audit_rules_file_deletion_events_rmdir: true
 audit_rules_file_deletion_events_unlink: true
 audit_rules_file_deletion_events_unlinkat: true
+audit_rules_immutable: true
 audit_rules_kernel_module_loading_delete: true
 audit_rules_kernel_module_loading_init: true
 audit_rules_login_events_faillock: true
 audit_rules_login_events_lastlog: true
 audit_rules_login_events_tallylog: true
+audit_rules_mac_modification: true
+audit_rules_media_export: true
+audit_rules_networkconfig_modification: true
 audit_rules_privileged_commands_chage: true
 audit_rules_privileged_commands_chsh: true
 audit_rules_privileged_commands_crontab: true
@@ -52,6 +56,13 @@ audit_rules_privileged_commands_sudoedit: true
 audit_rules_privileged_commands_umount: true
 audit_rules_privileged_commands_unix_chkpwd: true
 audit_rules_privileged_commands_userhelper: true
+audit_rules_session_events: true
+audit_rules_sysadmin_actions: true
+audit_rules_time_adjtimex: true
+audit_rules_time_clock_settime: true
+audit_rules_time_settimeofday: true
+audit_rules_time_stime: true
+audit_rules_time_watch_localtime: true
 audit_rules_unsuccessful_file_modification_creat: true
 audit_rules_unsuccessful_file_modification_ftruncate: true
 audit_rules_unsuccessful_file_modification_open: true
