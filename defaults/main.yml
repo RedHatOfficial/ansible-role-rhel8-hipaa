@@ -2,12 +2,12 @@
 # defaults file for rhel8_hipaa
 var_auditd_flush: data
 var_system_crypto_policy: FIPS
-rsyslog_remote_loghost_address: logcollector
-var_selinux_policy_name: targeted
 var_selinux_state: enforcing
+var_selinux_policy_name: targeted
+var_selinuxuser_execstack: 'false'
 var_selinuxuser_execheap: 'false'
 var_selinuxuser_execmod: 'true'
-var_selinuxuser_execstack: 'false'
+rsyslog_remote_loghost_address: logcollector
 var_sshd_set_keepalive: '0'
 audit_rules_dac_modification_chmod: true
 audit_rules_dac_modification_chown: true
@@ -58,6 +58,7 @@ audit_rules_privileged_commands_unix_chkpwd: true
 audit_rules_privileged_commands_userhelper: true
 audit_rules_session_events: true
 audit_rules_sysadmin_actions: true
+audit_rules_system_shutdown: true
 audit_rules_time_adjtimex: true
 audit_rules_time_clock_settime: true
 audit_rules_time_settimeofday: true
