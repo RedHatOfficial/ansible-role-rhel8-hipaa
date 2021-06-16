@@ -1,14 +1,14 @@
 ---
 # defaults file for rhel8_hipaa
-var_auditd_flush: data
 var_system_crypto_policy: FIPS
-var_selinux_state: enforcing
+var_auditd_flush: data
+rsyslog_remote_loghost_address: logcollector
 var_selinux_policy_name: targeted
+var_selinux_state: enforcing
+var_selinuxuser_execmod: 'true'
 var_selinuxuser_execstack: 'false'
 var_selinuxuser_execheap: 'false'
-var_selinuxuser_execmod: 'true'
-rsyslog_remote_loghost_address: logcollector
-var_sshd_set_keepalive: '0'
+var_sshd_disable_compression: 'no'
 audit_rules_dac_modification_chmod: true
 audit_rules_dac_modification_chown: true
 audit_rules_dac_modification_fchmod: true
@@ -143,8 +143,7 @@ sshd_disable_root_login: true
 sshd_do_not_permit_user_env: true
 sshd_enable_strictmodes: true
 sshd_enable_warning_banner: true
-sshd_set_keepalive: true
-sshd_use_priv_separation: true
+sshd_set_keepalive_0: true
 sysctl_fs_suid_dumpable: true
 sysctl_kernel_dmesg_restrict: true
 sysctl_kernel_randomize_va_space: true
