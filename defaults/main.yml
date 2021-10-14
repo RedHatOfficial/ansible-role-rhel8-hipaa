@@ -3,11 +3,11 @@
 var_system_crypto_policy: FIPS
 var_auditd_flush: data
 rsyslog_remote_loghost_address: logcollector
-var_selinux_state: enforcing
 var_selinux_policy_name: targeted
-var_selinuxuser_execstack: 'false'
+var_selinux_state: enforcing
 var_selinuxuser_execheap: 'false'
 var_selinuxuser_execmod: 'true'
+var_selinuxuser_execstack: 'false'
 var_sshd_disable_compression: 'no'
 audit_rules_dac_modification_chmod: true
 audit_rules_dac_modification_chown: true
