@@ -2,11 +2,11 @@
 # defaults file for rhel8_hipaa
 var_system_crypto_policy: FIPS
 var_auditd_flush: data
-var_selinux_state: enforcing
 var_selinux_policy_name: targeted
+var_selinux_state: enforcing
+var_selinuxuser_execstack: 'false'
 var_selinuxuser_execheap: 'false'
 var_selinuxuser_execmod: 'true'
-var_selinuxuser_execstack: 'false'
 rsyslog_remote_loghost_address: logcollector
 var_sshd_disable_compression: 'no'
 audit_rules_dac_modification_chmod: true
