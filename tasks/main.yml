@@ -276,6 +276,7 @@
     create: true
   tags:
   - CCE-80935-0
+  - DISA-STIG-RHEL-08-010020
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -301,6 +302,7 @@
   command: /usr/bin/update-crypto-policies --set {{ var_system_crypto_policy }}
   tags:
   - CCE-80935-0
+  - DISA-STIG-RHEL-08-010020
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -329,6 +331,7 @@
     regexp: ^\s*CRYPTO_POLICY.*$
   tags:
   - CCE-80939-2
+  - DISA-STIG-RHEL-08-010020
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -1059,6 +1062,7 @@
   - CCE-80876-6
   - DISA-STIG-RHEL-08-040180
   - NIST-800-171-3.4.5
+  - NIST-800-53-CM-6
   - disable_strategy
   - low_complexity
   - low_disruption
@@ -1085,6 +1089,7 @@
   - CCE-80876-6
   - DISA-STIG-RHEL-08-040180
   - NIST-800-171-3.4.5
+  - NIST-800-53-CM-6
   - disable_strategy
   - low_complexity
   - low_disruption
@@ -1110,6 +1115,7 @@
   - CCE-80876-6
   - DISA-STIG-RHEL-08-040180
   - NIST-800-171-3.4.5
+  - NIST-800-53-CM-6
   - disable_strategy
   - low_complexity
   - low_disruption
@@ -22375,7 +22381,6 @@
   - DISA-STIG-RHEL-08-010550
   - NIST-800-171-3.1.1
   - NIST-800-171-3.1.5
-  - NIST-800-53-
   - NIST-800-53-AC-17(a)
   - NIST-800-53-AC-6(2)
   - NIST-800-53-CM-6(a)
