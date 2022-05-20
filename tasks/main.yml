@@ -331,7 +331,7 @@
     regexp: ^\s*CRYPTO_POLICY.*$
   tags:
   - CCE-80939-2
-  - DISA-STIG-RHEL-08-010020
+  - DISA-STIG-RHEL-08-010287
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -902,15 +902,13 @@
 
 - name: Disable service debug-shell
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service debug-shell
     systemd:
       name: debug-shell.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"debug-shell.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - low_complexity | bool
@@ -1541,12 +1539,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Get current kernel parameters
-  ansible.builtin.shell:
-    cmd: /usr/bin/grub2-editenv - list | grep "kernelopts="
-  register: kernelopts
-  ignore_errors: true
-  changed_when: false
+- name: Update grub defaults and the bootloader menu
+  command: /sbin/grubby --update-kernel=ALL --args="audit=1"
   when:
   - grub2_audit_argument | bool
   - low_disruption | bool
@@ -1556,70 +1550,6 @@
   - restrict_strategy | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - '"grub2-common" in ansible_facts.packages'
-  tags:
-  - CCE-80825-3
-  - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030601
-  - NIST-800-171-3.3.1
-  - NIST-800-53-AC-17(1)
-  - NIST-800-53-AU-10
-  - NIST-800-53-AU-14(1)
-  - NIST-800-53-CM-6(a)
-  - NIST-800-53-IR-5(1)
-  - PCI-DSS-Req-10.3
-  - grub2_audit_argument
-  - low_disruption
-  - medium_complexity
-  - medium_severity
-  - reboot_required
-  - restrict_strategy
-
-- name: Update the bootloader menu
-  command: /usr/bin/grub2-editenv - set "{{ item }} audit=1"
-  with_items: '{{ kernelopts.stdout_lines | select(''match'', ''^kernelopts.*'') | list }}'
-  when:
-  - grub2_audit_argument | bool
-  - low_disruption | bool
-  - medium_complexity | bool
-  - medium_severity | bool
-  - reboot_required | bool
-  - restrict_strategy | bool
-  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"grub2-common" in ansible_facts.packages'
-  - kernelopts.rc == 0
-  - kernelopts.stdout_lines is defined
-  - kernelopts.stdout_lines | length > 0
-  - kernelopts.stdout | regex_search('^kernelopts=(?:.*\s)?audit=1(?:\s.*)?$', multiline=True) is none
-  tags:
-  - CCE-80825-3
-  - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030601
-  - NIST-800-171-3.3.1
-  - NIST-800-53-AC-17(1)
-  - NIST-800-53-AU-10
-  - NIST-800-53-AU-14(1)
-  - NIST-800-53-CM-6(a)
-  - NIST-800-53-IR-5(1)
-  - PCI-DSS-Req-10.3
-  - grub2_audit_argument
-  - low_disruption
-  - medium_complexity
-  - medium_severity
-  - reboot_required
-  - restrict_strategy
-
-- name: Update the bootloader menu when there are no entries previously set
-  command: /usr/bin/grub2-editenv - set "kernelopts=audit=1"
-  when:
-  - grub2_audit_argument | bool
-  - low_disruption | bool
-  - medium_complexity | bool
-  - medium_severity | bool
-  - reboot_required | bool
-  - restrict_strategy | bool
-  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"grub2-common" in ansible_facts.packages'
-  - kernelopts.rc != 0
   tags:
   - CCE-80825-3
   - CJIS-5.4.1.1
@@ -6096,7 +6026,7 @@
   tags:
   - CCE-80687-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030540
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6130,7 +6060,7 @@
   tags:
   - CCE-80687-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030540
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6249,7 +6179,7 @@
   tags:
   - CCE-80687-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030540
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6369,7 +6299,7 @@
   tags:
   - CCE-80687-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030540
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6388,7 +6318,7 @@
   tags:
   - CCE-80688-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030530
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6422,7 +6352,7 @@
   tags:
   - CCE-80688-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030530
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6541,7 +6471,7 @@
   tags:
   - CCE-80688-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030530
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6661,7 +6591,7 @@
   tags:
   - CCE-80688-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030530
+  - DISA-STIG-RHEL-08-030490
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6680,7 +6610,7 @@
   tags:
   - CCE-80689-3
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030520
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6714,7 +6644,7 @@
   tags:
   - CCE-80689-3
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030520
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6835,7 +6765,7 @@
   tags:
   - CCE-80689-3
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030520
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6957,7 +6887,7 @@
   tags:
   - CCE-80689-3
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030520
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -6976,7 +6906,7 @@
   tags:
   - CCE-80690-1
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030510
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7010,7 +6940,7 @@
   tags:
   - CCE-80690-1
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030510
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7131,7 +7061,7 @@
   tags:
   - CCE-80690-1
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030510
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7253,7 +7183,7 @@
   tags:
   - CCE-80690-1
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030510
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7272,7 +7202,7 @@
   tags:
   - CCE-80691-9
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030240
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7306,7 +7236,7 @@
   tags:
   - CCE-80691-9
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030240
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7530,7 +7460,7 @@
   tags:
   - CCE-80691-9
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030240
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7755,7 +7685,7 @@
   tags:
   - CCE-80691-9
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030240
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7774,7 +7704,7 @@
   tags:
   - CCE-80692-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030230
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -7808,7 +7738,7 @@
   tags:
   - CCE-80692-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030230
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -8032,7 +7962,7 @@
   tags:
   - CCE-80692-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030230
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -8257,7 +8187,7 @@
   tags:
   - CCE-80692-7
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030230
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -8276,7 +8206,7 @@
   tags:
   - CCE-80693-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030500
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -8310,7 +8240,7 @@
   tags:
   - CCE-80693-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030500
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -8431,7 +8361,7 @@
   tags:
   - CCE-80693-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030500
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -8553,7 +8483,7 @@
   tags:
   - CCE-80693-5
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030500
+  - DISA-STIG-RHEL-08-030480
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -9074,7 +9004,7 @@
   tags:
   - CCE-80695-0
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030220
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -9108,7 +9038,7 @@
   tags:
   - CCE-80695-0
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030220
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -9332,7 +9262,7 @@
   tags:
   - CCE-80695-0
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030220
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -9557,7 +9487,7 @@
   tags:
   - CCE-80695-0
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030220
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -9576,7 +9506,7 @@
   tags:
   - CCE-80696-8
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030210
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -9610,7 +9540,7 @@
   tags:
   - CCE-80696-8
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030210
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -9834,7 +9764,7 @@
   tags:
   - CCE-80696-8
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030210
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -10059,7 +9989,7 @@
   tags:
   - CCE-80696-8
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030210
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -10078,7 +10008,7 @@
   tags:
   - CCE-80697-6
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030270
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -10112,7 +10042,7 @@
   tags:
   - CCE-80697-6
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030270
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -10336,7 +10266,7 @@
   tags:
   - CCE-80697-6
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030270
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -10561,7 +10491,7 @@
   tags:
   - CCE-80697-6
   - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030270
+  - DISA-STIG-RHEL-08-030200
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -11429,7 +11359,7 @@
     manager: auto
   tags:
   - CCE-80704-0
-  - DISA-STIG-RHEL-08-030362
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -11462,7 +11392,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80704-0
-  - DISA-STIG-RHEL-08-030362
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -11584,7 +11514,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80704-0
-  - DISA-STIG-RHEL-08-030362
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -11707,7 +11637,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80704-0
-  - DISA-STIG-RHEL-08-030362
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -11725,7 +11655,7 @@
     manager: auto
   tags:
   - CCE-80705-7
-  - DISA-STIG-RHEL-08-030363
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -11758,7 +11688,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80705-7
-  - DISA-STIG-RHEL-08-030363
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -11880,7 +11810,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80705-7
-  - DISA-STIG-RHEL-08-030363
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12003,7 +11933,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80705-7
-  - DISA-STIG-RHEL-08-030363
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12021,7 +11951,7 @@
     manager: auto
   tags:
   - CCE-80706-5
-  - DISA-STIG-RHEL-08-030364
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12054,7 +11984,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80706-5
-  - DISA-STIG-RHEL-08-030364
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12176,7 +12106,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80706-5
-  - DISA-STIG-RHEL-08-030364
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12299,7 +12229,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80706-5
-  - DISA-STIG-RHEL-08-030364
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12317,7 +12247,7 @@
     manager: auto
   tags:
   - CCE-80707-3
-  - DISA-STIG-RHEL-08-030365
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12350,7 +12280,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80707-3
-  - DISA-STIG-RHEL-08-030365
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12472,7 +12402,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80707-3
-  - DISA-STIG-RHEL-08-030365
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12595,7 +12525,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80707-3
-  - DISA-STIG-RHEL-08-030365
+  - DISA-STIG-RHEL-08-030361
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12613,7 +12543,7 @@
     manager: auto
   tags:
   - CCE-80751-1
-  - DISA-STIG-RHEL-08-030470
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12647,7 +12577,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80751-1
-  - DISA-STIG-RHEL-08-030470
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12774,7 +12704,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80751-1
-  - DISA-STIG-RHEL-08-030470
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -12902,7 +12832,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80751-1
-  - DISA-STIG-RHEL-08-030470
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13029,7 +12959,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80751-1
-  - DISA-STIG-RHEL-08-030470
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13157,7 +13087,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80751-1
-  - DISA-STIG-RHEL-08-030470
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13176,7 +13106,7 @@
     manager: auto
   tags:
   - CCE-80752-9
-  - DISA-STIG-RHEL-08-030460
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13210,7 +13140,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80752-9
-  - DISA-STIG-RHEL-08-030460
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13337,7 +13267,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80752-9
-  - DISA-STIG-RHEL-08-030460
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13465,7 +13395,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80752-9
-  - DISA-STIG-RHEL-08-030460
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13592,7 +13522,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80752-9
-  - DISA-STIG-RHEL-08-030460
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13720,7 +13650,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80752-9
-  - DISA-STIG-RHEL-08-030460
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13739,7 +13669,7 @@
     manager: auto
   tags:
   - CCE-80753-7
-  - DISA-STIG-RHEL-08-030440
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13773,7 +13703,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80753-7
-  - DISA-STIG-RHEL-08-030440
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -13900,7 +13830,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80753-7
-  - DISA-STIG-RHEL-08-030440
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14028,7 +13958,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80753-7
-  - DISA-STIG-RHEL-08-030440
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14155,7 +14085,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80753-7
-  - DISA-STIG-RHEL-08-030440
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14283,7 +14213,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80753-7
-  - DISA-STIG-RHEL-08-030440
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14302,7 +14232,7 @@
     manager: auto
   tags:
   - CCE-80755-2
-  - DISA-STIG-RHEL-08-030450
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14336,7 +14266,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80755-2
-  - DISA-STIG-RHEL-08-030450
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14463,7 +14393,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80755-2
-  - DISA-STIG-RHEL-08-030450
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14591,7 +14521,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80755-2
-  - DISA-STIG-RHEL-08-030450
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14718,7 +14648,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80755-2
-  - DISA-STIG-RHEL-08-030450
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14846,7 +14776,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80755-2
-  - DISA-STIG-RHEL-08-030450
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14865,7 +14795,7 @@
     manager: auto
   tags:
   - CCE-80754-5
-  - DISA-STIG-RHEL-08-030430
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -14899,7 +14829,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80754-5
-  - DISA-STIG-RHEL-08-030430
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -15026,7 +14956,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80754-5
-  - DISA-STIG-RHEL-08-030430
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -15154,7 +15084,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80754-5
-  - DISA-STIG-RHEL-08-030430
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -15281,7 +15211,7 @@
   - '"audit" in ansible_facts.packages'
   tags:
   - CCE-80754-5
-  - DISA-STIG-RHEL-08-030430
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -15409,7 +15339,7 @@
   - audit_arch == "b64"
   tags:
   - CCE-80754-5
-  - DISA-STIG-RHEL-08-030430
+  - DISA-STIG-RHEL-08-030420
   - NIST-800-171-3.1.7
   - NIST-800-53-AU-12(c)
   - NIST-800-53-AU-2(d)
@@ -20772,10 +20702,10 @@
   - medium_severity
   - no_reboot_needed
 
-- name: Ensure permission 0600 on /boot/grub2/grub.cfg
+- name: Ensure permission u-xs,g-xwrs,o-xwrt on /boot/grub2/grub.cfg
   file:
     path: /boot/grub2/grub.cfg
-    mode: '0600'
+    mode: u-xs,g-xwrs,o-xwrt
   when:
   - configure_strategy | bool
   - file_permissions_grub2_cfg | bool
@@ -20826,15 +20756,13 @@
 
 - name: Disable service autofs
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service autofs
     systemd:
       name: autofs.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"autofs.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - low_complexity | bool
@@ -20956,8 +20884,8 @@
   when:
   - disable_strategy | bool
   - low_complexity | bool
+  - low_severity | bool
   - medium_disruption | bool
-  - medium_severity | bool
   - reboot_required | bool
   - sysctl_kernel_dmesg_restrict | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
@@ -20969,8 +20897,8 @@
   - NIST-800-53-SI-11(b)
   - disable_strategy
   - low_complexity
+  - low_severity
   - medium_disruption
-  - medium_severity
   - reboot_required
   - sysctl_kernel_dmesg_restrict
 
@@ -20983,8 +20911,8 @@
   when:
   - disable_strategy | bool
   - low_complexity | bool
+  - low_severity | bool
   - medium_disruption | bool
-  - medium_severity | bool
   - reboot_required | bool
   - sysctl_kernel_dmesg_restrict | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
@@ -20996,8 +20924,8 @@
   - NIST-800-53-SI-11(b)
   - disable_strategy
   - low_complexity
+  - low_severity
   - medium_disruption
-  - medium_severity
   - reboot_required
   - sysctl_kernel_dmesg_restrict
 
@@ -21010,8 +20938,8 @@
   when:
   - disable_strategy | bool
   - low_complexity | bool
+  - low_severity | bool
   - medium_disruption | bool
-  - medium_severity | bool
   - reboot_required | bool
   - sysctl_kernel_dmesg_restrict | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
@@ -21023,8 +20951,8 @@
   - NIST-800-53-SI-11(b)
   - disable_strategy
   - low_complexity
+  - low_severity
   - medium_disruption
-  - medium_severity
   - reboot_required
   - sysctl_kernel_dmesg_restrict
 
@@ -21472,15 +21400,13 @@
 
 - name: Disable service kdump
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service kdump
     systemd:
       name: kdump.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"kdump.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - low_complexity | bool
@@ -21673,15 +21599,13 @@
 
 - name: Disable service xinetd
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service xinetd
     systemd:
       name: xinetd.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"xinetd.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - low_complexity | bool
@@ -21786,15 +21710,13 @@
 
 - name: Disable service rexec
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service rexec
     systemd:
       name: rexec.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"rexec.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - high_severity | bool
@@ -21881,15 +21803,13 @@
 
 - name: Disable service rlogin
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service rlogin
     systemd:
       name: rlogin.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"rlogin.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - high_severity | bool
@@ -22100,15 +22020,13 @@
 
 - name: Disable service telnet
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service telnet
     systemd:
       name: telnet.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"telnet.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - high_severity | bool
@@ -22195,15 +22113,13 @@
 
 - name: Disable service zebra
   block:
-  - name: Gather the service facts
-    service_facts: null
   - name: Disable service zebra
     systemd:
       name: zebra.service
       enabled: 'no'
       state: stopped
       masked: 'yes'
-    when: '"zebra.service" in ansible_facts.services'
+    ignore_errors: 'yes'
   when:
   - disable_strategy | bool
   - low_complexity | bool
@@ -22278,6 +22194,59 @@
   - medium_severity
   - no_reboot_needed
   - service_zebra_disabled
+
+- name: Set SSH Client Alive Count Max to zero
+  block:
+  - name: Check for duplicate values
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      create: false
+      regexp: (?i)^\s*ClientAliveCountMax\s+
+      state: absent
+    check_mode: true
+    changed_when: false
+    register: dupes
+  - name: Deduplicate values from /etc/ssh/sshd_config
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      create: false
+      regexp: (?i)^\s*ClientAliveCountMax\s+
+      state: absent
+    when: dupes.found is defined and dupes.found > 1
+  - name: Insert correct line to /etc/ssh/sshd_config
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      create: true
+      regexp: (?i)^\s*ClientAliveCountMax\s+
+      line: ClientAliveCountMax 0
+      state: present
+      insertbefore: ^[#\s]*Match
+      validate: /usr/sbin/sshd -t -f %s
+  when:
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - sshd_set_keepalive_0 | bool
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-83405-1
+  - CJIS-5.5.6
+  - DISA-STIG-RHEL-08-010200
+  - NIST-800-171-3.1.11
+  - NIST-800-53-AC-12
+  - NIST-800-53-AC-17(a)
+  - NIST-800-53-AC-2(5)
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-SC-10
+  - PCI-DSS-Req-8.1.8
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sshd_set_keepalive_0
 
 - name: Disable Host-Based Authentication
   block:
@@ -22790,56 +22759,3 @@
   - no_reboot_needed
   - restrict_strategy
   - sshd_enable_warning_banner
-
-- name: Set SSH Client Alive Count Max to zero
-  block:
-  - name: Check for duplicate values
-    lineinfile:
-      path: /etc/ssh/sshd_config
-      create: false
-      regexp: (?i)^\s*ClientAliveCountMax\s+
-      state: absent
-    check_mode: true
-    changed_when: false
-    register: dupes
-  - name: Deduplicate values from /etc/ssh/sshd_config
-    lineinfile:
-      path: /etc/ssh/sshd_config
-      create: false
-      regexp: (?i)^\s*ClientAliveCountMax\s+
-      state: absent
-    when: dupes.found is defined and dupes.found > 1
-  - name: Insert correct line to /etc/ssh/sshd_config
-    lineinfile:
-      path: /etc/ssh/sshd_config
-      create: true
-      regexp: (?i)^\s*ClientAliveCountMax\s+
-      line: ClientAliveCountMax 0
-      state: present
-      insertbefore: ^[#\s]*Match
-      validate: /usr/sbin/sshd -t -f %s
-  when:
-  - low_complexity | bool
-  - low_disruption | bool
-  - medium_severity | bool
-  - no_reboot_needed | bool
-  - restrict_strategy | bool
-  - sshd_set_keepalive_0 | bool
-  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  tags:
-  - CCE-83405-1
-  - CJIS-5.5.6
-  - DISA-STIG-RHEL-08-010200
-  - NIST-800-171-3.1.11
-  - NIST-800-53-AC-12
-  - NIST-800-53-AC-17(a)
-  - NIST-800-53-AC-2(5)
-  - NIST-800-53-CM-6(a)
-  - NIST-800-53-SC-10
-  - PCI-DSS-Req-8.1.8
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-  - sshd_set_keepalive_0
