@@ -1724,6 +1724,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80708-1
   - CJIS-5.4.1.1
@@ -1755,6 +1756,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80708-1
   - CJIS-5.4.1.1
@@ -1789,6 +1791,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80708-1
   - CJIS-5.4.1.1
@@ -1844,6 +1847,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80721-4
   - CJIS-5.4.1.1
@@ -1873,6 +1877,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80721-4
@@ -1901,6 +1906,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -1930,6 +1936,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -1961,6 +1968,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80721-4
@@ -1991,6 +1999,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80721-4
   - CJIS-5.4.1.1
@@ -2021,6 +2030,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80721-4
@@ -2077,6 +2087,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80722-2
   - CJIS-5.4.1.1
@@ -2192,6 +2203,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80722-2
   - CJIS-5.4.1.1
@@ -2307,6 +2319,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80722-2
@@ -2362,6 +2375,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -2481,6 +2495,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -2600,6 +2615,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80723-0
@@ -2631,6 +2647,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -2661,6 +2678,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -2690,6 +2708,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -2720,6 +2739,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -2752,6 +2772,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -2783,6 +2804,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -2814,6 +2836,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80723-0
@@ -2845,6 +2868,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -2875,6 +2899,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -2904,6 +2929,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -2934,6 +2960,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -2966,6 +2993,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -2997,6 +3025,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -3028,6 +3057,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80723-0
@@ -3059,6 +3089,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -3089,6 +3120,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -3118,6 +3150,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3148,6 +3181,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3180,6 +3214,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -3211,6 +3246,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -3242,6 +3278,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80723-0
@@ -3273,6 +3310,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -3303,6 +3341,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -3332,6 +3371,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3362,6 +3402,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3394,6 +3435,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80723-0
@@ -3425,6 +3467,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80723-0
   - CJIS-5.4.1.1
@@ -3456,6 +3499,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80723-0
@@ -3512,6 +3556,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80742-0
   - CJIS-5.4.1.1
@@ -3541,6 +3586,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80742-0
@@ -3569,6 +3615,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3598,6 +3645,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3629,6 +3677,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80742-0
@@ -3659,6 +3708,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80742-0
   - CJIS-5.4.1.1
@@ -3689,6 +3739,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80742-0
@@ -3719,6 +3770,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80742-0
   - CJIS-5.4.1.1
@@ -3748,6 +3800,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80742-0
@@ -3776,6 +3829,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3805,6 +3859,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -3836,6 +3891,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80742-0
@@ -3866,6 +3922,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80742-0
   - CJIS-5.4.1.1
@@ -3896,6 +3953,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80742-0
@@ -3926,6 +3984,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80742-0
   - CJIS-5.4.1.1
@@ -3955,6 +4014,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80742-0
@@ -3983,6 +4043,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -4012,6 +4073,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -4043,6 +4105,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80742-0
@@ -4073,6 +4136,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80742-0
   - CJIS-5.4.1.1
@@ -4103,6 +4167,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80742-0
@@ -4147,13 +4212,12 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
 
-- name: Search /etc/audit/rules.d for audit rule entries for sysadmin actions
+- name: Check if watch rule for /etc/sudoers already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: ^.*/etc/sudoers.*$
+    contains: ^\s*-w\s+/etc/sudoers\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_audit_sysadmin_actions
+  register: find_existing_watch_rules_d
   when:
   - audit_rules_sysadmin_actions | bool
   - low_complexity | bool
@@ -4162,6 +4226,41 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80743-8
+  - CJIS-5.4.1.1
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(7)(b)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.2
+  - PCI-DSS-Req-10.2.5.b
+  - audit_rules_sysadmin_actions
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Search /etc/audit/rules.d for other rules with specified key actions
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)actions$
+    patterns: '*.rules'
+  register: find_watch_key
+  when:
+  - audit_rules_sysadmin_actions | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80743-8
   - CJIS-5.4.1.1
@@ -4182,7 +4281,7 @@
 
 - name: Use /etc/audit/rules.d/actions.rules as the recipient for the rule
   set_fact:
-    all_sysadmin_actions_files:
+    all_files:
     - /etc/audit/rules.d/actions.rules
   when:
   - audit_rules_sysadmin_actions | bool
@@ -4192,7 +4291,9 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_audit_sysadmin_actions.matched is defined and find_audit_sysadmin_actions.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80743-8
   - CJIS-5.4.1.1
@@ -4213,8 +4314,8 @@
 
 - name: Use matched file as the recipient for the rule
   set_fact:
-    all_sysadmin_actions_files:
-    - '{{ find_audit_sysadmin_actions.files | map(attribute=''path'') | list | first }}'
+    all_files:
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - audit_rules_sysadmin_actions | bool
   - low_complexity | bool
@@ -4223,7 +4324,9 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_audit_sysadmin_actions.matched is defined and find_audit_sysadmin_actions.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80743-8
   - CJIS-5.4.1.1
@@ -4242,11 +4345,12 @@
   - no_reboot_needed
   - restrict_strategy
 
-- name: Inserts/replaces audit rule for /etc/sudoers rule in rules.d
+- name: Add watch rule for /etc/sudoers in /etc/audit/rules.d/
   lineinfile:
-    path: '{{ all_sysadmin_actions_files[0] }}'
+    path: '{{ all_files[0] }}'
     line: -w /etc/sudoers -p wa -k actions
     create: true
+    mode: '0640'
   when:
   - audit_rules_sysadmin_actions | bool
   - low_complexity | bool
@@ -4255,6 +4359,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80743-8
   - CJIS-5.4.1.1
@@ -4273,11 +4379,12 @@
   - no_reboot_needed
   - restrict_strategy
 
-- name: Inserts/replaces audit rule for /etc/sudoers.d rule in rules.d
-  lineinfile:
-    path: '{{ all_sysadmin_actions_files[0] }}'
-    line: -w /etc/sudoers.d/ -p wa -k actions
-    create: true
+- name: Check if watch rule for /etc/sudoers already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/etc/sudoers\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
   when:
   - audit_rules_sysadmin_actions | bool
   - low_complexity | bool
@@ -4286,6 +4393,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80743-8
   - CJIS-5.4.1.1
@@ -4304,11 +4412,13 @@
   - no_reboot_needed
   - restrict_strategy
 
-- name: Inserts/replaces audit rule for /etc/sudoers in audit.rules
+- name: Add watch rule for /etc/sudoers in /etc/audit/audit.rules
   lineinfile:
-    path: /etc/audit/audit.rules
     line: -w /etc/sudoers -p wa -k actions
+    state: present
+    dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - audit_rules_sysadmin_actions | bool
   - low_complexity | bool
@@ -4317,6 +4427,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80743-8
   - CJIS-5.4.1.1
@@ -4335,11 +4447,12 @@
   - no_reboot_needed
   - restrict_strategy
 
-- name: Inserts/replaces audit rule for /etc/sudoers.d in audit.rules
-  lineinfile:
-    path: /etc/audit/audit.rules
-    line: -w /etc/sudoers.d/ -p wa -k actions
-    create: true
+- name: Check if watch rule for /etc/sudoers.d/ already exists in /etc/audit/rules.d/
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^\s*-w\s+/etc/sudoers.d/\s+-p\s+wa(\s|$)+
+    patterns: '*.rules'
+  register: find_existing_watch_rules_d
   when:
   - audit_rules_sysadmin_actions | bool
   - low_complexity | bool
@@ -4348,6 +4461,209 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80743-8
+  - CJIS-5.4.1.1
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(7)(b)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.2
+  - PCI-DSS-Req-10.2.5.b
+  - audit_rules_sysadmin_actions
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Search /etc/audit/rules.d for other rules with specified key actions
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)actions$
+    patterns: '*.rules'
+  register: find_watch_key
+  when:
+  - audit_rules_sysadmin_actions | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80743-8
+  - CJIS-5.4.1.1
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(7)(b)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.2
+  - PCI-DSS-Req-10.2.5.b
+  - audit_rules_sysadmin_actions
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/actions.rules as the recipient for the rule
+  set_fact:
+    all_files:
+    - /etc/audit/rules.d/actions.rules
+  when:
+  - audit_rules_sysadmin_actions | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80743-8
+  - CJIS-5.4.1.1
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(7)(b)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.2
+  - PCI-DSS-Req-10.2.5.b
+  - audit_rules_sysadmin_actions
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Use matched file as the recipient for the rule
+  set_fact:
+    all_files:
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
+  when:
+  - audit_rules_sysadmin_actions | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80743-8
+  - CJIS-5.4.1.1
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(7)(b)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.2
+  - PCI-DSS-Req-10.2.5.b
+  - audit_rules_sysadmin_actions
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Add watch rule for /etc/sudoers.d/ in /etc/audit/rules.d/
+  lineinfile:
+    path: '{{ all_files[0] }}'
+    line: -w /etc/sudoers.d/ -p wa -k actions
+    create: true
+    mode: '0640'
+  when:
+  - audit_rules_sysadmin_actions | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80743-8
+  - CJIS-5.4.1.1
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(7)(b)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.2
+  - PCI-DSS-Req-10.2.5.b
+  - audit_rules_sysadmin_actions
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Check if watch rule for /etc/sudoers.d/ already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/etc/sudoers.d/\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - audit_rules_sysadmin_actions | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80743-8
+  - CJIS-5.4.1.1
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(7)(b)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.2
+  - PCI-DSS-Req-10.2.5.b
+  - audit_rules_sysadmin_actions
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Add watch rule for /etc/sudoers.d/ in /etc/audit/audit.rules
+  lineinfile:
+    line: -w /etc/sudoers.d/ -p wa -k actions
+    state: present
+    dest: /etc/audit/audit.rules
+    create: true
+    mode: '0640'
+  when:
+  - audit_rules_sysadmin_actions | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80743-8
   - CJIS-5.4.1.1
@@ -4403,6 +4719,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80744-6
   - NIST-800-171-3.3.1
@@ -4431,6 +4748,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80744-6
   - NIST-800-171-3.3.1
@@ -4461,6 +4779,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80744-6
   - NIST-800-171-3.3.1
@@ -4504,43 +4823,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Set architecture for audit group tasks
-  set_fact:
-    audit_arch: b{{ ansible_architecture | regex_replace('.*(\d\d$)','\1') }}
-  when:
-  - DISA_STIG_RHEL_08_030170 | bool
-  - audit_rules_usergroup_modification_group | bool
-  - low_complexity | bool
-  - low_disruption | bool
-  - medium_severity | bool
-  - reboot_required | bool
-  - restrict_strategy | bool
-  - '"audit" in ansible_facts.packages'
-  tags:
-  - CCE-80758-6
-  - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030170
-  - NIST-800-171-3.1.7
-  - NIST-800-53-AC-2(4)
-  - NIST-800-53-AC-6(9)
-  - NIST-800-53-AU-12(c)
-  - NIST-800-53-AU-2(d)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-10.2.5
-  - audit_rules_usergroup_modification_group
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - reboot_required
-  - restrict_strategy
-
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /etc/group already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k audit_rules_usergroup_modification$
+    contains: ^\s*-w\s+/etc/group\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_group
+  register: find_existing_watch_rules_d
   when:
   - DISA_STIG_RHEL_08_030170 | bool
   - audit_rules_usergroup_modification_group | bool
@@ -4550,6 +4838,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80758-6
   - CJIS-5.4.1.1
@@ -4568,11 +4857,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for
-    the rule
-  set_fact:
-    all_files:
-    - /etc/audit/rules.d/privileged.rules
+- name: Search /etc/audit/rules.d for other rules with specified key audit_rules_usergroup_modification
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)audit_rules_usergroup_modification$
+    patterns: '*.rules'
+  register: find_watch_key
   when:
   - DISA_STIG_RHEL_08_030170 | bool
   - audit_rules_usergroup_modification_group | bool
@@ -4582,7 +4872,42 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_group.matched is defined and find_group.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80758-6
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030170
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_group
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/audit_rules_usergroup_modification.rules as the recipient for the rule
+  set_fact:
+    all_files:
+    - /etc/audit/rules.d/audit_rules_usergroup_modification.rules
+  when:
+  - DISA_STIG_RHEL_08_030170 | bool
+  - audit_rules_usergroup_modification_group | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80758-6
   - CJIS-5.4.1.1
@@ -4604,7 +4929,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_group.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - DISA_STIG_RHEL_08_030170 | bool
   - audit_rules_usergroup_modification_group | bool
@@ -4614,7 +4939,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_group.matched is defined and find_group.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80758-6
   - CJIS-5.4.1.1
@@ -4633,11 +4960,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the group rule in rules.d when on x86
+- name: Add watch rule for /etc/group in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /etc/group -p wa -k audit_rules_usergroup_modification
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030170 | bool
   - audit_rules_usergroup_modification_group | bool
@@ -4647,6 +4975,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80758-6
   - CJIS-5.4.1.1
@@ -4665,12 +4995,47 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the group rule in /etc/audit/audit.rules
+- name: Check if watch rule for /etc/group already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/etc/group\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - DISA_STIG_RHEL_08_030170 | bool
+  - audit_rules_usergroup_modification_group | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80758-6
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030170
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_group
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /etc/group in /etc/audit/audit.rules
   lineinfile:
     line: -w /etc/group -p wa -k audit_rules_usergroup_modification
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030170 | bool
   - audit_rules_usergroup_modification_group | bool
@@ -4680,6 +5045,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80758-6
   - CJIS-5.4.1.1
@@ -4727,43 +5094,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Set architecture for audit gshadow tasks
-  set_fact:
-    audit_arch: b{{ ansible_architecture | regex_replace('.*(\d\d$)','\1') }}
-  when:
-  - DISA_STIG_RHEL_08_030160 | bool
-  - audit_rules_usergroup_modification_gshadow | bool
-  - low_complexity | bool
-  - low_disruption | bool
-  - medium_severity | bool
-  - reboot_required | bool
-  - restrict_strategy | bool
-  - '"audit" in ansible_facts.packages'
-  tags:
-  - CCE-80759-4
-  - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030160
-  - NIST-800-171-3.1.7
-  - NIST-800-53-AC-2(4)
-  - NIST-800-53-AC-6(9)
-  - NIST-800-53-AU-12(c)
-  - NIST-800-53-AU-2(d)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-10.2.5
-  - audit_rules_usergroup_modification_gshadow
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - reboot_required
-  - restrict_strategy
-
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /etc/gshadow already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k audit_rules_usergroup_modification$
+    contains: ^\s*-w\s+/etc/gshadow\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_gshadow
+  register: find_existing_watch_rules_d
   when:
   - DISA_STIG_RHEL_08_030160 | bool
   - audit_rules_usergroup_modification_gshadow | bool
@@ -4773,6 +5109,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80759-4
   - CJIS-5.4.1.1
@@ -4791,11 +5128,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for
-    the rule
-  set_fact:
-    all_files:
-    - /etc/audit/rules.d/privileged.rules
+- name: Search /etc/audit/rules.d for other rules with specified key audit_rules_usergroup_modification
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)audit_rules_usergroup_modification$
+    patterns: '*.rules'
+  register: find_watch_key
   when:
   - DISA_STIG_RHEL_08_030160 | bool
   - audit_rules_usergroup_modification_gshadow | bool
@@ -4805,7 +5143,42 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_gshadow.matched is defined and find_gshadow.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80759-4
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030160
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/audit_rules_usergroup_modification.rules as the recipient for the rule
+  set_fact:
+    all_files:
+    - /etc/audit/rules.d/audit_rules_usergroup_modification.rules
+  when:
+  - DISA_STIG_RHEL_08_030160 | bool
+  - audit_rules_usergroup_modification_gshadow | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80759-4
   - CJIS-5.4.1.1
@@ -4827,7 +5200,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_gshadow.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - DISA_STIG_RHEL_08_030160 | bool
   - audit_rules_usergroup_modification_gshadow | bool
@@ -4837,7 +5210,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_gshadow.matched is defined and find_gshadow.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80759-4
   - CJIS-5.4.1.1
@@ -4856,11 +5231,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the gshadow rule in rules.d when on x86
+- name: Add watch rule for /etc/gshadow in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /etc/gshadow -p wa -k audit_rules_usergroup_modification
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030160 | bool
   - audit_rules_usergroup_modification_gshadow | bool
@@ -4870,6 +5246,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80759-4
   - CJIS-5.4.1.1
@@ -4888,12 +5266,47 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the gshadow rule in /etc/audit/audit.rules
+- name: Check if watch rule for /etc/gshadow already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/etc/gshadow\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - DISA_STIG_RHEL_08_030160 | bool
+  - audit_rules_usergroup_modification_gshadow | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80759-4
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030160
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /etc/gshadow in /etc/audit/audit.rules
   lineinfile:
     line: -w /etc/gshadow -p wa -k audit_rules_usergroup_modification
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030160 | bool
   - audit_rules_usergroup_modification_gshadow | bool
@@ -4903,6 +5316,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80759-4
   - CJIS-5.4.1.1
@@ -4950,43 +5365,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Set architecture for audit opasswd tasks
-  set_fact:
-    audit_arch: b{{ ansible_architecture | regex_replace('.*(\d\d$)','\1') }}
-  when:
-  - DISA_STIG_RHEL_08_030140 | bool
-  - audit_rules_usergroup_modification_opasswd | bool
-  - low_complexity | bool
-  - low_disruption | bool
-  - medium_severity | bool
-  - reboot_required | bool
-  - restrict_strategy | bool
-  - '"audit" in ansible_facts.packages'
-  tags:
-  - CCE-80760-2
-  - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030140
-  - NIST-800-171-3.1.7
-  - NIST-800-53-AC-2(4)
-  - NIST-800-53-AC-6(9)
-  - NIST-800-53-AU-12(c)
-  - NIST-800-53-AU-2(d)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-10.2.5
-  - audit_rules_usergroup_modification_opasswd
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - reboot_required
-  - restrict_strategy
-
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /etc/security/opasswd already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k audit_rules_usergroup_modification$
+    contains: ^\s*-w\s+/etc/security/opasswd\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_opasswd
+  register: find_existing_watch_rules_d
   when:
   - DISA_STIG_RHEL_08_030140 | bool
   - audit_rules_usergroup_modification_opasswd | bool
@@ -4996,6 +5380,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80760-2
   - CJIS-5.4.1.1
@@ -5014,11 +5399,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for
-    the rule
-  set_fact:
-    all_files:
-    - /etc/audit/rules.d/privileged.rules
+- name: Search /etc/audit/rules.d for other rules with specified key audit_rules_usergroup_modification
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)audit_rules_usergroup_modification$
+    patterns: '*.rules'
+  register: find_watch_key
   when:
   - DISA_STIG_RHEL_08_030140 | bool
   - audit_rules_usergroup_modification_opasswd | bool
@@ -5028,7 +5414,42 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_opasswd.matched is defined and find_opasswd.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80760-2
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030140
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_opasswd
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/audit_rules_usergroup_modification.rules as the recipient for the rule
+  set_fact:
+    all_files:
+    - /etc/audit/rules.d/audit_rules_usergroup_modification.rules
+  when:
+  - DISA_STIG_RHEL_08_030140 | bool
+  - audit_rules_usergroup_modification_opasswd | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80760-2
   - CJIS-5.4.1.1
@@ -5050,7 +5471,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_opasswd.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - DISA_STIG_RHEL_08_030140 | bool
   - audit_rules_usergroup_modification_opasswd | bool
@@ -5060,7 +5481,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_opasswd.matched is defined and find_opasswd.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80760-2
   - CJIS-5.4.1.1
@@ -5079,11 +5502,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the opasswd rule in rules.d when on x86
+- name: Add watch rule for /etc/security/opasswd in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /etc/security/opasswd -p wa -k audit_rules_usergroup_modification
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030140 | bool
   - audit_rules_usergroup_modification_opasswd | bool
@@ -5093,6 +5517,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80760-2
   - CJIS-5.4.1.1
@@ -5111,12 +5537,47 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the opasswd rule in /etc/audit/audit.rules
+- name: Check if watch rule for /etc/security/opasswd already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/etc/security/opasswd\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - DISA_STIG_RHEL_08_030140 | bool
+  - audit_rules_usergroup_modification_opasswd | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80760-2
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030140
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_opasswd
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /etc/security/opasswd in /etc/audit/audit.rules
   lineinfile:
     line: -w /etc/security/opasswd -p wa -k audit_rules_usergroup_modification
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030140 | bool
   - audit_rules_usergroup_modification_opasswd | bool
@@ -5126,6 +5587,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80760-2
   - CJIS-5.4.1.1
@@ -5173,43 +5636,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Set architecture for audit passwd tasks
-  set_fact:
-    audit_arch: b{{ ansible_architecture | regex_replace('.*(\d\d$)','\1') }}
-  when:
-  - DISA_STIG_RHEL_08_030150 | bool
-  - audit_rules_usergroup_modification_passwd | bool
-  - low_complexity | bool
-  - low_disruption | bool
-  - medium_severity | bool
-  - reboot_required | bool
-  - restrict_strategy | bool
-  - '"audit" in ansible_facts.packages'
-  tags:
-  - CCE-80761-0
-  - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030150
-  - NIST-800-171-3.1.7
-  - NIST-800-53-AC-2(4)
-  - NIST-800-53-AC-6(9)
-  - NIST-800-53-AU-12(c)
-  - NIST-800-53-AU-2(d)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-10.2.5
-  - audit_rules_usergroup_modification_passwd
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - reboot_required
-  - restrict_strategy
-
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /etc/passwd already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k audit_rules_usergroup_modification$
+    contains: ^\s*-w\s+/etc/passwd\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_passwd
+  register: find_existing_watch_rules_d
   when:
   - DISA_STIG_RHEL_08_030150 | bool
   - audit_rules_usergroup_modification_passwd | bool
@@ -5219,6 +5651,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80761-0
   - CJIS-5.4.1.1
@@ -5237,11 +5670,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for
-    the rule
-  set_fact:
-    all_files:
-    - /etc/audit/rules.d/privileged.rules
+- name: Search /etc/audit/rules.d for other rules with specified key audit_rules_usergroup_modification
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)audit_rules_usergroup_modification$
+    patterns: '*.rules'
+  register: find_watch_key
   when:
   - DISA_STIG_RHEL_08_030150 | bool
   - audit_rules_usergroup_modification_passwd | bool
@@ -5251,7 +5685,42 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_passwd.matched is defined and find_passwd.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80761-0
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030150
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_passwd
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/audit_rules_usergroup_modification.rules as the recipient for the rule
+  set_fact:
+    all_files:
+    - /etc/audit/rules.d/audit_rules_usergroup_modification.rules
+  when:
+  - DISA_STIG_RHEL_08_030150 | bool
+  - audit_rules_usergroup_modification_passwd | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80761-0
   - CJIS-5.4.1.1
@@ -5273,7 +5742,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_passwd.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - DISA_STIG_RHEL_08_030150 | bool
   - audit_rules_usergroup_modification_passwd | bool
@@ -5283,7 +5752,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_passwd.matched is defined and find_passwd.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80761-0
   - CJIS-5.4.1.1
@@ -5302,11 +5773,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the passwd rule in rules.d when on x86
+- name: Add watch rule for /etc/passwd in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /etc/passwd -p wa -k audit_rules_usergroup_modification
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030150 | bool
   - audit_rules_usergroup_modification_passwd | bool
@@ -5316,6 +5788,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80761-0
   - CJIS-5.4.1.1
@@ -5334,12 +5808,47 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the passwd rule in /etc/audit/audit.rules
+- name: Check if watch rule for /etc/passwd already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/etc/passwd\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - DISA_STIG_RHEL_08_030150 | bool
+  - audit_rules_usergroup_modification_passwd | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80761-0
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030150
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_passwd
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /etc/passwd in /etc/audit/audit.rules
   lineinfile:
     line: -w /etc/passwd -p wa -k audit_rules_usergroup_modification
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030150 | bool
   - audit_rules_usergroup_modification_passwd | bool
@@ -5349,6 +5858,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80761-0
   - CJIS-5.4.1.1
@@ -5396,43 +5907,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Set architecture for audit shadow tasks
-  set_fact:
-    audit_arch: b{{ ansible_architecture | regex_replace('.*(\d\d$)','\1') }}
-  when:
-  - DISA_STIG_RHEL_08_030130 | bool
-  - audit_rules_usergroup_modification_shadow | bool
-  - low_complexity | bool
-  - low_disruption | bool
-  - medium_severity | bool
-  - reboot_required | bool
-  - restrict_strategy | bool
-  - '"audit" in ansible_facts.packages'
-  tags:
-  - CCE-80762-8
-  - CJIS-5.4.1.1
-  - DISA-STIG-RHEL-08-030130
-  - NIST-800-171-3.1.7
-  - NIST-800-53-AC-2(4)
-  - NIST-800-53-AC-6(9)
-  - NIST-800-53-AU-12(c)
-  - NIST-800-53-AU-2(d)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-10.2.5
-  - audit_rules_usergroup_modification_shadow
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - reboot_required
-  - restrict_strategy
-
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /etc/shadow already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k audit_rules_usergroup_modification$
+    contains: ^\s*-w\s+/etc/shadow\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_shadow
+  register: find_existing_watch_rules_d
   when:
   - DISA_STIG_RHEL_08_030130 | bool
   - audit_rules_usergroup_modification_shadow | bool
@@ -5442,6 +5922,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80762-8
   - CJIS-5.4.1.1
@@ -5460,11 +5941,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for
-    the rule
-  set_fact:
-    all_files:
-    - /etc/audit/rules.d/privileged.rules
+- name: Search /etc/audit/rules.d for other rules with specified key audit_rules_usergroup_modification
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)audit_rules_usergroup_modification$
+    patterns: '*.rules'
+  register: find_watch_key
   when:
   - DISA_STIG_RHEL_08_030130 | bool
   - audit_rules_usergroup_modification_shadow | bool
@@ -5474,7 +5956,42 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_shadow.matched is defined and find_shadow.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80762-8
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030130
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/audit_rules_usergroup_modification.rules as the recipient for the rule
+  set_fact:
+    all_files:
+    - /etc/audit/rules.d/audit_rules_usergroup_modification.rules
+  when:
+  - DISA_STIG_RHEL_08_030130 | bool
+  - audit_rules_usergroup_modification_shadow | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80762-8
   - CJIS-5.4.1.1
@@ -5496,7 +6013,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_shadow.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - DISA_STIG_RHEL_08_030130 | bool
   - audit_rules_usergroup_modification_shadow | bool
@@ -5506,7 +6023,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_shadow.matched is defined and find_shadow.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80762-8
   - CJIS-5.4.1.1
@@ -5525,11 +6044,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the shadow rule in rules.d when on x86
+- name: Add watch rule for /etc/shadow in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /etc/shadow -p wa -k audit_rules_usergroup_modification
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030130 | bool
   - audit_rules_usergroup_modification_shadow | bool
@@ -5539,6 +6059,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80762-8
   - CJIS-5.4.1.1
@@ -5557,12 +6079,47 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the shadow rule in /etc/audit/audit.rules
+- name: Check if watch rule for /etc/shadow already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/etc/shadow\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - DISA_STIG_RHEL_08_030130 | bool
+  - audit_rules_usergroup_modification_shadow | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80762-8
+  - CJIS-5.4.1.1
+  - DISA-STIG-RHEL-08-030130
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-2(4)
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.5
+  - audit_rules_usergroup_modification_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /etc/shadow in /etc/audit/audit.rules
   lineinfile:
     line: -w /etc/shadow -p wa -k audit_rules_usergroup_modification
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030130 | bool
   - audit_rules_usergroup_modification_shadow | bool
@@ -5572,6 +6129,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80762-8
   - CJIS-5.4.1.1
@@ -5629,6 +6188,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80685-1
   - CJIS-5.4.1.1
@@ -5749,6 +6309,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80685-1
   - CJIS-5.4.1.1
@@ -5869,6 +6430,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80685-1
@@ -5925,6 +6487,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80686-9
   - CJIS-5.4.1.1
@@ -6047,6 +6610,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80686-9
   - CJIS-5.4.1.1
@@ -6169,6 +6733,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80686-9
@@ -6225,6 +6790,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80687-7
   - CJIS-5.4.1.1
@@ -6345,6 +6911,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80687-7
   - CJIS-5.4.1.1
@@ -6465,6 +7032,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80687-7
@@ -6521,6 +7089,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80688-5
   - CJIS-5.4.1.1
@@ -6641,6 +7210,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80688-5
   - CJIS-5.4.1.1
@@ -6761,6 +7331,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80688-5
@@ -6817,6 +7388,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80689-3
   - CJIS-5.4.1.1
@@ -6939,6 +7511,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80689-3
   - CJIS-5.4.1.1
@@ -7061,6 +7634,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80689-3
@@ -7117,6 +7691,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80690-1
   - CJIS-5.4.1.1
@@ -7239,6 +7814,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80690-1
   - CJIS-5.4.1.1
@@ -7361,6 +7937,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80690-1
@@ -7417,6 +7994,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80691-9
   - CJIS-5.4.1.1
@@ -7642,6 +8220,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80691-9
   - CJIS-5.4.1.1
@@ -7867,6 +8446,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80691-9
@@ -7923,6 +8503,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80692-7
   - CJIS-5.4.1.1
@@ -8148,6 +8729,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80692-7
   - CJIS-5.4.1.1
@@ -8373,6 +8955,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80692-7
@@ -8429,6 +9012,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80693-5
   - CJIS-5.4.1.1
@@ -8551,6 +9135,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80693-5
   - CJIS-5.4.1.1
@@ -8673,6 +9258,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80693-5
@@ -8729,6 +9315,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80694-3
   - CJIS-5.4.1.1
@@ -8954,6 +9541,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80694-3
   - CJIS-5.4.1.1
@@ -9179,6 +9767,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80694-3
@@ -9235,6 +9824,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80695-0
   - CJIS-5.4.1.1
@@ -9460,6 +10050,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80695-0
   - CJIS-5.4.1.1
@@ -9685,6 +10276,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80695-0
@@ -9741,6 +10333,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80696-8
   - CJIS-5.4.1.1
@@ -9966,6 +10559,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80696-8
   - CJIS-5.4.1.1
@@ -10191,6 +10785,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80696-8
@@ -10247,6 +10842,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80697-6
   - CJIS-5.4.1.1
@@ -10472,6 +11068,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80697-6
   - CJIS-5.4.1.1
@@ -10697,6 +11294,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80697-6
@@ -10838,6 +11436,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80698-4
   - DISA-STIG-RHEL-08-030260
@@ -10976,6 +11575,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80699-2
   - NIST-800-171-3.1.7
@@ -11117,6 +11717,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80700-8
   - DISA-STIG-RHEL-08-030313
@@ -11259,6 +11860,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80701-6
   - DISA-STIG-RHEL-08-030316
@@ -11312,6 +11914,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80703-2
   - DISA-STIG-RHEL-08-030361
@@ -11435,6 +12038,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80703-2
   - DISA-STIG-RHEL-08-030361
@@ -11558,6 +12162,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80703-2
@@ -11612,6 +12217,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80704-0
   - DISA-STIG-RHEL-08-030361
@@ -11735,6 +12341,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80704-0
   - DISA-STIG-RHEL-08-030361
@@ -11858,6 +12465,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80704-0
@@ -11912,6 +12520,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80705-7
   - DISA-STIG-RHEL-08-030361
@@ -12035,6 +12644,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80705-7
   - DISA-STIG-RHEL-08-030361
@@ -12158,6 +12768,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80705-7
@@ -12212,6 +12823,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80706-5
   - DISA-STIG-RHEL-08-030361
@@ -12335,6 +12947,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80706-5
   - DISA-STIG-RHEL-08-030361
@@ -12458,6 +13071,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80706-5
@@ -12512,6 +13126,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80707-3
   - DISA-STIG-RHEL-08-030361
@@ -12635,6 +13250,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80707-3
   - DISA-STIG-RHEL-08-030361
@@ -12758,6 +13374,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80707-3
@@ -12813,6 +13430,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80751-1
   - DISA-STIG-RHEL-08-030420
@@ -12941,6 +13559,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80751-1
   - DISA-STIG-RHEL-08-030420
@@ -13069,6 +13688,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80751-1
@@ -13198,6 +13818,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80751-1
   - DISA-STIG-RHEL-08-030420
@@ -13326,6 +13947,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80751-1
@@ -13382,6 +14004,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80752-9
   - DISA-STIG-RHEL-08-030420
@@ -13510,6 +14133,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80752-9
   - DISA-STIG-RHEL-08-030420
@@ -13638,6 +14262,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80752-9
@@ -13767,6 +14392,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80752-9
   - DISA-STIG-RHEL-08-030420
@@ -13895,6 +14521,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80752-9
@@ -13951,6 +14578,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80753-7
   - DISA-STIG-RHEL-08-030420
@@ -14079,6 +14707,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80753-7
   - DISA-STIG-RHEL-08-030420
@@ -14207,6 +14836,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80753-7
@@ -14336,6 +14966,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80753-7
   - DISA-STIG-RHEL-08-030420
@@ -14464,6 +15095,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80753-7
@@ -14520,6 +15152,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80755-2
   - DISA-STIG-RHEL-08-030420
@@ -14648,6 +15281,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80755-2
   - DISA-STIG-RHEL-08-030420
@@ -14776,6 +15410,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80755-2
@@ -14905,6 +15540,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80755-2
   - DISA-STIG-RHEL-08-030420
@@ -15033,6 +15669,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80755-2
@@ -15089,6 +15726,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80754-5
   - DISA-STIG-RHEL-08-030420
@@ -15217,6 +15855,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80754-5
   - DISA-STIG-RHEL-08-030420
@@ -15345,6 +15984,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80754-5
@@ -15474,6 +16114,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80754-5
   - DISA-STIG-RHEL-08-030420
@@ -15602,6 +16243,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80754-5
@@ -15658,6 +16300,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80756-0
   - DISA-STIG-RHEL-08-030420
@@ -15786,6 +16429,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80756-0
   - DISA-STIG-RHEL-08-030420
@@ -15914,6 +16558,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80756-0
@@ -16043,6 +16688,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80756-0
   - DISA-STIG-RHEL-08-030420
@@ -16171,6 +16817,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80756-0
@@ -16227,6 +16874,7 @@
   - medium_severity | bool
   - no_reboot_needed | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80711-5
   - DISA-STIG-RHEL-08-030390
@@ -16341,6 +16989,7 @@
   - medium_severity | bool
   - no_reboot_needed | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80711-5
   - DISA-STIG-RHEL-08-030390
@@ -16455,6 +17104,7 @@
   - medium_severity | bool
   - no_reboot_needed | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80711-5
@@ -16511,6 +17161,7 @@
   - medium_severity | bool
   - no_reboot_needed | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80713-1
   - DISA-STIG-RHEL-08-030360
@@ -16629,6 +17280,7 @@
   - medium_severity | bool
   - no_reboot_needed | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80713-1
   - DISA-STIG-RHEL-08-030360
@@ -16747,6 +17399,7 @@
   - medium_severity | bool
   - no_reboot_needed | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80713-1
@@ -16791,13 +17444,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /var/log/faillock already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k logins$
+    contains: ^\s*-w\s+/var/log/faillock\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_faillock
+  register: find_existing_watch_rules_d
   when:
   - DISA_STIG_RHEL_08_030590 | bool
   - audit_rules_login_events_faillock | bool
@@ -16807,6 +17459,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80718-0
   - DISA-STIG-RHEL-08-030590
@@ -16823,8 +17476,40 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/logins.rules as the recipient for the
-    rule
+- name: Search /etc/audit/rules.d for other rules with specified key logins
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)logins$
+    patterns: '*.rules'
+  register: find_watch_key
+  when:
+  - DISA_STIG_RHEL_08_030590 | bool
+  - audit_rules_login_events_faillock | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80718-0
+  - DISA-STIG-RHEL-08-030590
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.3
+  - audit_rules_login_events_faillock
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/logins.rules as the recipient for the rule
   set_fact:
     all_files:
     - /etc/audit/rules.d/logins.rules
@@ -16837,7 +17522,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_faillock.matched is defined and find_faillock.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80718-0
   - DISA-STIG-RHEL-08-030590
@@ -16857,7 +17544,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_faillock.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - DISA_STIG_RHEL_08_030590 | bool
   - audit_rules_login_events_faillock | bool
@@ -16867,7 +17554,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_faillock.matched is defined and find_faillock.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80718-0
   - DISA-STIG-RHEL-08-030590
@@ -16884,11 +17573,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the faillock rule in rules.d when on x86
+- name: Add watch rule for /var/log/faillock in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /var/log/faillock -p wa -k logins
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030590 | bool
   - audit_rules_login_events_faillock | bool
@@ -16898,6 +17588,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80718-0
   - DISA-STIG-RHEL-08-030590
@@ -16914,12 +17606,45 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the faillock rule in /etc/audit/audit.rules
+- name: Check if watch rule for /var/log/faillock already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/var/log/faillock\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - DISA_STIG_RHEL_08_030590 | bool
+  - audit_rules_login_events_faillock | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80718-0
+  - DISA-STIG-RHEL-08-030590
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.3
+  - audit_rules_login_events_faillock
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /var/log/faillock in /etc/audit/audit.rules
   lineinfile:
     line: -w /var/log/faillock -p wa -k logins
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030590 | bool
   - audit_rules_login_events_faillock | bool
@@ -16929,6 +17654,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80718-0
   - DISA-STIG-RHEL-08-030590
@@ -16972,13 +17699,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /var/log/lastlog already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k logins$
+    contains: ^\s*-w\s+/var/log/lastlog\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_lastlog
+  register: find_existing_watch_rules_d
   when:
   - DISA_STIG_RHEL_08_030600 | bool
   - audit_rules_login_events_lastlog | bool
@@ -16988,6 +17714,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80719-8
   - DISA-STIG-RHEL-08-030600
@@ -17004,8 +17731,40 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/logins.rules as the recipient for the
-    rule
+- name: Search /etc/audit/rules.d for other rules with specified key logins
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)logins$
+    patterns: '*.rules'
+  register: find_watch_key
+  when:
+  - DISA_STIG_RHEL_08_030600 | bool
+  - audit_rules_login_events_lastlog | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80719-8
+  - DISA-STIG-RHEL-08-030600
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.3
+  - audit_rules_login_events_lastlog
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/logins.rules as the recipient for the rule
   set_fact:
     all_files:
     - /etc/audit/rules.d/logins.rules
@@ -17018,7 +17777,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_lastlog.matched is defined and find_lastlog.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80719-8
   - DISA-STIG-RHEL-08-030600
@@ -17038,7 +17799,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_lastlog.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - DISA_STIG_RHEL_08_030600 | bool
   - audit_rules_login_events_lastlog | bool
@@ -17048,7 +17809,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_lastlog.matched is defined and find_lastlog.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80719-8
   - DISA-STIG-RHEL-08-030600
@@ -17065,11 +17828,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the lastlog rule in rules.d when on x86
+- name: Add watch rule for /var/log/lastlog in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /var/log/lastlog -p wa -k logins
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030600 | bool
   - audit_rules_login_events_lastlog | bool
@@ -17079,6 +17843,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80719-8
   - DISA-STIG-RHEL-08-030600
@@ -17095,12 +17861,45 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the lastlog rule in /etc/audit/audit.rules
+- name: Check if watch rule for /var/log/lastlog already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/var/log/lastlog\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - DISA_STIG_RHEL_08_030600 | bool
+  - audit_rules_login_events_lastlog | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80719-8
+  - DISA-STIG-RHEL-08-030600
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.3
+  - audit_rules_login_events_lastlog
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /var/log/lastlog in /etc/audit/audit.rules
   lineinfile:
     line: -w /var/log/lastlog -p wa -k logins
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - DISA_STIG_RHEL_08_030600 | bool
   - audit_rules_login_events_lastlog | bool
@@ -17110,6 +17909,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80719-8
   - DISA-STIG-RHEL-08-030600
@@ -17151,13 +17952,12 @@
   - reboot_required | bool
   - restrict_strategy | bool
 
-- name: Search /etc/audit/rules.d for other user/group modification audit rules
+- name: Check if watch rule for /var/log/tallylog already exists in /etc/audit/rules.d/
   find:
     paths: /etc/audit/rules.d
-    recurse: false
-    contains: -k logins$
+    contains: ^\s*-w\s+/var/log/tallylog\s+-p\s+wa(\s|$)+
     patterns: '*.rules'
-  register: find_tallylog
+  register: find_existing_watch_rules_d
   when:
   - audit_rules_login_events_tallylog | bool
   - low_complexity | bool
@@ -17166,6 +17966,7 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80720-6
   - NIST-800-171-3.1.7
@@ -17181,8 +17982,38 @@
   - reboot_required
   - restrict_strategy
 
-- name: If existing user/group modification ruleset not found, use /etc/audit/rules.d/logins.rules as the recipient for the
-    rule
+- name: Search /etc/audit/rules.d for other rules with specified key logins
+  find:
+    paths: /etc/audit/rules.d
+    contains: ^.*(?:-F key=|-k\s+)logins$
+    patterns: '*.rules'
+  register: find_watch_key
+  when:
+  - audit_rules_login_events_tallylog | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
+  tags:
+  - CCE-80720-6
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.3
+  - audit_rules_login_events_tallylog
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Use /etc/audit/rules.d/logins.rules as the recipient for the rule
   set_fact:
     all_files:
     - /etc/audit/rules.d/logins.rules
@@ -17194,7 +18025,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_tallylog.matched is defined and find_tallylog.matched == 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80720-6
   - NIST-800-171-3.1.7
@@ -17213,7 +18046,7 @@
 - name: Use matched file as the recipient for the rule
   set_fact:
     all_files:
-    - '{{ find_tallylog.files | map(attribute=''path'') | list | first }}'
+    - '{{ find_watch_key.files | map(attribute=''path'') | list | first }}'
   when:
   - audit_rules_login_events_tallylog | bool
   - low_complexity | bool
@@ -17222,7 +18055,9 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
-  - find_tallylog.matched is defined and find_tallylog.matched > 0
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
+    find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80720-6
   - NIST-800-171-3.1.7
@@ -17238,11 +18073,12 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the tallylog rule in rules.d when on x86
+- name: Add watch rule for /var/log/tallylog in /etc/audit/rules.d/
   lineinfile:
     path: '{{ all_files[0] }}'
     line: -w /var/log/tallylog -p wa -k logins
     create: true
+    mode: '0640'
   when:
   - audit_rules_login_events_tallylog | bool
   - low_complexity | bool
@@ -17251,6 +18087,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80720-6
   - NIST-800-171-3.1.7
@@ -17266,12 +18104,43 @@
   - reboot_required
   - restrict_strategy
 
-- name: Inserts/replaces the tallylog rule in /etc/audit/audit.rules
+- name: Check if watch rule for /var/log/tallylog already exists in /etc/audit/audit.rules
+  find:
+    paths: /etc/audit/
+    contains: ^\s*-w\s+/var/log/tallylog\s+-p\s+wa(\s|$)+
+    patterns: audit.rules
+  register: find_existing_watch_audit_rules
+  when:
+  - audit_rules_login_events_tallylog | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-80720-6
+  - NIST-800-171-3.1.7
+  - NIST-800-53-AC-6(9)
+  - NIST-800-53-AU-12(c)
+  - NIST-800-53-AU-2(d)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.2.3
+  - audit_rules_login_events_tallylog
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - reboot_required
+  - restrict_strategy
+
+- name: Add watch rule for /var/log/tallylog in /etc/audit/audit.rules
   lineinfile:
     line: -w /var/log/tallylog -p wa -k logins
     state: present
     dest: /etc/audit/audit.rules
     create: true
+    mode: '0640'
   when:
   - audit_rules_login_events_tallylog | bool
   - low_complexity | bool
@@ -17280,6 +18149,8 @@
   - reboot_required | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80720-6
   - NIST-800-171-3.1.7
@@ -17420,6 +18291,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80725-5
   - DISA-STIG-RHEL-08-030250
@@ -17561,6 +18433,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80726-3
   - DISA-STIG-RHEL-08-030410
@@ -17701,6 +18574,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80727-1
   - DISA-STIG-RHEL-08-030400
@@ -17841,6 +18715,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80728-9
   - DISA-STIG-RHEL-08-030370
@@ -17982,6 +18857,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80729-7
   - DISA-STIG-RHEL-08-030350
@@ -18124,6 +19000,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80730-5
   - DISA-STIG-RHEL-08-030340
@@ -18264,6 +19141,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80731-3
   - DISA-STIG-RHEL-08-030290
@@ -18406,6 +19284,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80732-1
   - DISA-STIG-RHEL-08-030311
@@ -18547,6 +19426,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80733-9
   - DISA-STIG-RHEL-08-030312
@@ -18688,6 +19568,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80735-4
   - DISA-STIG-RHEL-08-030320
@@ -18827,6 +19708,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80736-2
   - DISA-STIG-RHEL-08-030190
@@ -18966,6 +19848,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80737-0
   - DISA-STIG-RHEL-08-030550
@@ -19102,6 +19985,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80738-8
   - NIST-800-171-3.1.7
@@ -19240,6 +20124,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80739-6
   - DISA-STIG-RHEL-08-030301
@@ -19388,6 +20273,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80740-4
   - DISA-STIG-RHEL-08-030317
@@ -19536,6 +20422,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80741-2
   - DISA-STIG-RHEL-08-030315
@@ -19588,6 +20475,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80745-3
   - CJIS-5.4.1.1
@@ -19707,6 +20595,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80745-3
   - CJIS-5.4.1.1
@@ -19825,6 +20714,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80745-3
@@ -19879,6 +20769,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80746-1
   - CJIS-5.4.1.1
@@ -19992,6 +20883,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80746-1
   - CJIS-5.4.1.1
@@ -20105,6 +20997,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80746-1
@@ -20159,6 +21052,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80747-9
   - CJIS-5.4.1.1
@@ -20278,6 +21172,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80747-9
   - CJIS-5.4.1.1
@@ -20397,6 +21292,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - audit_arch == "b64"
   tags:
   - CCE-80747-9
@@ -20543,6 +21439,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80748-7
   - CJIS-5.4.1.1
@@ -20599,6 +21496,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80749-5
   - CJIS-5.4.1.1
@@ -20629,6 +21527,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80749-5
@@ -20658,6 +21557,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched == 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -20688,6 +21588,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_watch_key.matched is defined and find_watch_key.matched > 0 and find_existing_watch_rules_d.matched is defined and
     find_existing_watch_rules_d.matched == 0
   tags:
@@ -20720,6 +21621,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_rules_d.matched is defined and find_existing_watch_rules_d.matched == 0
   tags:
   - CCE-80749-5
@@ -20751,6 +21653,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80749-5
   - CJIS-5.4.1.1
@@ -20782,6 +21685,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - find_existing_watch_audit_rules.matched is defined and find_existing_watch_audit_rules.matched == 0
   tags:
   - CCE-80749-5
@@ -20837,6 +21741,7 @@
   - medium_severity | bool
   - no_reboot_needed | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80677-8
   - CJIS-5.4.1.1
@@ -20888,6 +21793,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - '"audit" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80680-2
   - NIST-800-171-3.3.1
@@ -20900,6 +21806,30 @@
   - no_reboot_needed
   - restrict_strategy
 
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - CCE-80800-6
+  - CJIS-5.5.2.2
+  - NIST-800-171-3.4.5
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-7.1
+  - configure_strategy
+  - file_groupowner_grub2_cfg
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  when:
+  - configure_strategy | bool
+  - file_groupowner_grub2_cfg | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+
 - name: Test for existence /boot/grub2/grub.cfg
   stat:
     path: /boot/grub2/grub.cfg
@@ -20911,6 +21841,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
+  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
+  - '"grub2-common" in ansible_facts.packages'
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80800-6
@@ -20937,6 +21869,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
+  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
+  - '"grub2-common" in ansible_facts.packages'
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - file_exists.stat is defined and file_exists.stat.exists
   tags:
@@ -20953,6 +21887,30 @@
   - medium_severity
   - no_reboot_needed
 
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - CCE-80805-5
+  - CJIS-5.5.2.2
+  - NIST-800-171-3.4.5
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-7.1
+  - configure_strategy
+  - file_owner_grub2_cfg
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  when:
+  - configure_strategy | bool
+  - file_owner_grub2_cfg | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+
 - name: Test for existence /boot/grub2/grub.cfg
   stat:
     path: /boot/grub2/grub.cfg
@@ -20964,6 +21922,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
+  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
+  - '"grub2-common" in ansible_facts.packages'
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - CCE-80805-5
@@ -20990,6 +21950,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
+  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
+  - '"grub2-common" in ansible_facts.packages'
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - file_exists.stat is defined and file_exists.stat.exists
   tags:
@@ -22583,6 +23545,7 @@
       insertbefore: ^[#\s]*Match
       validate: /usr/sbin/sshd -t -f %s
   when:
+  - DISA_STIG_RHEL_08_010200 | bool
   - low_complexity | bool
   - low_disruption | bool
   - medium_severity | bool
@@ -22593,6 +23556,7 @@
   tags:
   - CCE-83405-1
   - CJIS-5.5.6
+  - DISA-STIG-RHEL-08-010200
   - NIST-800-171-3.1.11
   - NIST-800-53-AC-12
   - NIST-800-53-AC-17(a)
