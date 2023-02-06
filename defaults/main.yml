@@ -2,6 +2,7 @@
 # defaults file for rhel8_hipaa
 var_system_crypto_policy: FIPS
 var_authselect_profile: sssd
+var_audit_failure_mode: '2'
 var_auditd_flush: data
 rsyslog_remote_loghost_address: logcollector
 var_selinux_policy_name: targeted
@@ -21,7 +22,6 @@ DISA_STIG_RHEL_08_010375: true
 DISA_STIG_RHEL_08_010430: true
 DISA_STIG_RHEL_08_010450: true
 DISA_STIG_RHEL_08_010500: true
-DISA_STIG_RHEL_08_010510: true
 DISA_STIG_RHEL_08_010521: true
 DISA_STIG_RHEL_08_010522: true
 DISA_STIG_RHEL_08_010550: true
