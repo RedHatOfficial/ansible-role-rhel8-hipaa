@@ -387,6 +387,50 @@
   package_facts:
     manager: auto
   tags:
+  - CCE-81003-6
+  - PCI-DSS-Req-6.2
+  - PCI-DSSv4-6.3.3
+  - dconf_db_up_to_date
+  - high_severity
+  - low_complexity
+  - medium_disruption
+  - no_reboot_needed
+  - unknown_strategy
+  when:
+  - dconf_db_up_to_date | bool
+  - high_severity | bool
+  - low_complexity | bool
+  - medium_disruption | bool
+  - no_reboot_needed | bool
+  - unknown_strategy | bool
+
+- name: Run dconf update
+  ansible.builtin.command:
+    cmd: dconf update
+  when:
+  - dconf_db_up_to_date | bool
+  - high_severity | bool
+  - low_complexity | bool
+  - medium_disruption | bool
+  - no_reboot_needed | bool
+  - unknown_strategy | bool
+  - '"gdm" in ansible_facts.packages'
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - CCE-81003-6
+  - PCI-DSS-Req-6.2
+  - PCI-DSSv4-6.3.3
+  - dconf_db_up_to_date
+  - high_severity
+  - low_complexity
+  - medium_disruption
+  - no_reboot_needed
+  - unknown_strategy
+
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
   - CCE-80772-7
   - NIST-800-171-3.1.12
   - dconf_gnome_remote_access_credential_prompt
@@ -815,6 +859,7 @@
   tags:
   - CCE-80795-8
   - CJIS-5.10.4.1
+  - DISA-STIG-RHEL-08-010019
   - NIST-800-171-3.4.8
   - NIST-800-53-CM-5(3)
   - NIST-800-53-CM-6(a)
@@ -829,6 +874,7 @@
   - no_reboot_needed
   - restrict_strategy
   when:
+  - DISA_STIG_RHEL_08_010019 | bool
   - ensure_redhat_gpgkey_installed | bool
   - high_severity | bool
   - medium_complexity | bool
@@ -844,6 +890,7 @@
   tags:
   - CCE-80795-8
   - CJIS-5.10.4.1
+  - DISA-STIG-RHEL-08-010019
   - NIST-800-171-3.4.8
   - NIST-800-53-CM-5(3)
   - NIST-800-53-CM-6(a)
@@ -858,6 +905,7 @@
   - no_reboot_needed
   - restrict_strategy
   when:
+  - DISA_STIG_RHEL_08_010019 | bool
   - ensure_redhat_gpgkey_installed | bool
   - high_severity | bool
   - medium_complexity | bool
@@ -873,6 +921,7 @@
   tags:
   - CCE-80795-8
   - CJIS-5.10.4.1
+  - DISA-STIG-RHEL-08-010019
   - NIST-800-171-3.4.8
   - NIST-800-53-CM-5(3)
   - NIST-800-53-CM-6(a)
@@ -887,6 +936,7 @@
   - no_reboot_needed
   - restrict_strategy
   when:
+  - DISA_STIG_RHEL_08_010019 | bool
   - ensure_redhat_gpgkey_installed | bool
   - high_severity | bool
   - medium_complexity | bool
@@ -900,6 +950,7 @@
   tags:
   - CCE-80795-8
   - CJIS-5.10.4.1
+  - DISA-STIG-RHEL-08-010019
   - NIST-800-171-3.4.8
   - NIST-800-53-CM-5(3)
   - NIST-800-53-CM-6(a)
@@ -914,6 +965,7 @@
   - no_reboot_needed
   - restrict_strategy
   when:
+  - DISA_STIG_RHEL_08_010019 | bool
   - ensure_redhat_gpgkey_installed | bool
   - high_severity | bool
   - medium_complexity | bool
@@ -926,6 +978,7 @@
     state: present
     key: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
   when:
+  - DISA_STIG_RHEL_08_010019 | bool
   - ensure_redhat_gpgkey_installed | bool
   - high_severity | bool
   - medium_complexity | bool
@@ -939,6 +992,7 @@
   tags:
   - CCE-80795-8
   - CJIS-5.10.4.1
+  - DISA-STIG-RHEL-08-010019
   - NIST-800-171-3.4.8
   - NIST-800-53-CM-5(3)
   - NIST-800-53-CM-6(a)
@@ -1078,7 +1132,7 @@
   - service_debug-shell_disabled
 
 - name: Unit Socket Exists - debug-shell.socket
-  command: systemctl list-unit-files debug-shell.socket
+  command: systemctl -q list-unit-files debug-shell.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -1119,7 +1173,7 @@
   - no_reboot_needed | bool
   - service_debug_shell_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"debug-shell.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("debug-shell.socket",multiline=True)
   tags:
   - CCE-80876-6
   - DISA-STIG-RHEL-08-040180
@@ -1172,6 +1226,7 @@
   - low_complexity | bool
   - low_disruption | bool
   - no_reboot_needed | bool
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - '"systemd" in ansible_facts.packages'
   tags:
   - CCE-80784-2
@@ -1251,6 +1306,7 @@
   - medium_severity | bool
   - reboot_required | bool
   - restrict_strategy | bool
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - '"grub2-common" in ansible_facts.packages'
   tags:
   - CCE-80826-1
@@ -1277,6 +1333,7 @@
   - medium_severity | bool
   - reboot_required | bool
   - restrict_strategy | bool
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - '"grub2-common" in ansible_facts.packages'
   tags:
   - CCE-80826-1
@@ -1300,6 +1357,7 @@
   - medium_severity | bool
   - reboot_required | bool
   - restrict_strategy | bool
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - '"grub2-common" in ansible_facts.packages'
   tags:
   - CCE-80826-1
@@ -1323,6 +1381,7 @@
   - medium_severity | bool
   - reboot_required | bool
   - restrict_strategy | bool
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - '"grub2-common" in ansible_facts.packages'
   tags:
   - CCE-80826-1
@@ -22493,7 +22552,7 @@
   - service_autofs_disabled
 
 - name: Unit Socket Exists - autofs.socket
-  command: systemctl list-unit-files autofs.socket
+  command: systemctl -q list-unit-files autofs.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -22537,7 +22596,7 @@
   - no_reboot_needed | bool
   - service_autofs_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"autofs.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("autofs.socket",multiline=True)
   tags:
   - CCE-80873-3
   - DISA-STIG-RHEL-08-040070
@@ -23365,7 +23424,7 @@
   - service_kdump_disabled
 
 - name: Unit Socket Exists - kdump.socket
-  command: systemctl list-unit-files kdump.socket
+  command: systemctl -q list-unit-files kdump.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -23407,7 +23466,7 @@
   - no_reboot_needed | bool
   - service_kdump_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"kdump.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("kdump.socket",multiline=True)
   tags:
   - CCE-80878-2
   - DISA-STIG-RHEL-08-010670
@@ -23568,7 +23627,7 @@
   - service_xinetd_disabled
 
 - name: Unit Socket Exists - xinetd.socket
-  command: systemctl list-unit-files xinetd.socket
+  command: systemctl -q list-unit-files xinetd.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -23608,7 +23667,7 @@
   - no_reboot_needed | bool
   - service_xinetd_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"xinetd.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("xinetd.socket",multiline=True)
   tags:
   - CCE-80888-1
   - NIST-800-171-3.4.7
@@ -23685,7 +23744,7 @@
   - service_rexec_disabled
 
 - name: Unit Socket Exists - rexec.socket
-  command: systemctl list-unit-files rexec.socket
+  command: systemctl -q list-unit-files rexec.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -23727,7 +23786,7 @@
   - no_reboot_needed | bool
   - service_rexec_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"rexec.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("rexec.socket",multiline=True)
   tags:
   - CCE-80884-0
   - NIST-800-171-3.1.13
@@ -23780,7 +23839,7 @@
   - service_rlogin_disabled
 
 - name: Unit Socket Exists - rlogin.socket
-  command: systemctl list-unit-files rlogin.socket
+  command: systemctl -q list-unit-files rlogin.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -23822,7 +23881,7 @@
   - no_reboot_needed | bool
   - service_rlogin_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"rlogin.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("rlogin.socket",multiline=True)
   tags:
   - CCE-80885-7
   - NIST-800-171-3.1.13
@@ -24043,7 +24102,7 @@
   - service_telnet_disabled
 
 - name: Unit Socket Exists - telnet.socket
-  command: systemctl list-unit-files telnet.socket
+  command: systemctl -q list-unit-files telnet.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -24085,7 +24144,7 @@
   - no_reboot_needed | bool
   - service_telnet_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"telnet.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("telnet.socket",multiline=True)
   tags:
   - CCE-80887-3
   - NIST-800-171-3.1.13
@@ -24135,7 +24194,7 @@
   - service_zebra_disabled
 
 - name: Unit Socket Exists - zebra.socket
-  command: systemctl list-unit-files zebra.socket
+  command: systemctl -q list-unit-files zebra.socket
   register: socket_file_exists
   changed_when: false
   failed_when: socket_file_exists.rc not in [0, 1]
@@ -24174,7 +24233,7 @@
   - no_reboot_needed | bool
   - service_zebra_disabled | bool
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  - '"zebra.socket" in socket_file_exists.stdout_lines[1]'
+  - socket_file_exists.stdout_lines is search("zebra.socket",multiline=True)
   tags:
   - CCE-80889-9
   - NIST-800-53-CM-6(a)
