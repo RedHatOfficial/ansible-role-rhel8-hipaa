@@ -2,9 +2,6 @@
 # defaults file for rhel8_hipaa
 var_system_crypto_policy: FIPS
 var_authselect_profile: sssd
-var_audit_failure_mode: '2'
-var_accounts_passwords_pam_faillock_dir: /var/log/faillock
-var_auditd_flush: data
 rsyslog_remote_loghost_address: logcollector
 var_selinux_policy_name: targeted
 var_selinux_state: enforcing
@@ -12,6 +9,9 @@ var_selinuxuser_execheap: 'false'
 var_selinuxuser_execmod: 'true'
 var_selinuxuser_execstack: 'false'
 var_sshd_disable_compression: 'no'
+var_audit_failure_mode: '2'
+var_accounts_passwords_pam_faillock_dir: /var/log/faillock
+var_auditd_flush: data
 DISA_STIG_RHEL_08_010019: true
 DISA_STIG_RHEL_08_010020: true
 DISA_STIG_RHEL_08_010040: true
