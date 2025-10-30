@@ -18,7 +18,6 @@ DISA_STIG_RHEL_08_010040: true
 DISA_STIG_RHEL_08_010151: true
 DISA_STIG_RHEL_08_010170: true
 DISA_STIG_RHEL_08_010287: true
-DISA_STIG_RHEL_08_010370: true
 DISA_STIG_RHEL_08_010371: true
 DISA_STIG_RHEL_08_010375: true
 DISA_STIG_RHEL_08_010430: true
@@ -75,6 +74,7 @@ DISA_STIG_RHEL_08_040080: true
 DISA_STIG_RHEL_08_040170: true
 DISA_STIG_RHEL_08_040172: true
 DISA_STIG_RHEL_08_040180: true
+DISA_STIG_needed_rules: true
 audit_rules_dac_modification_chmod: true
 audit_rules_dac_modification_chown: true
 audit_rules_dac_modification_fchmod: true
@@ -201,6 +201,7 @@ service_debug_shell_disabled: true
 service_kdump_disabled: true
 service_telnet_disabled: true
 service_xinetd_disabled: true
+special_service_block: true
 sshd_allow_only_protocol2: true
 sshd_disable_compression: true
 sshd_disable_empty_passwords: true
