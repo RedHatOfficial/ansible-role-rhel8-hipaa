@@ -70,7 +70,6 @@ DISA_STIG_RHEL_08_030600: true
 DISA_STIG_RHEL_08_030601: true
 DISA_STIG_RHEL_08_030690: true
 DISA_STIG_RHEL_08_040000: true
-DISA_STIG_RHEL_08_040010: true
 DISA_STIG_RHEL_08_040070: true
 DISA_STIG_RHEL_08_040080: true
 DISA_STIG_RHEL_08_040170: true
@@ -123,7 +122,9 @@ audit_rules_privileged_commands_sudoedit: true
 audit_rules_privileged_commands_umount: true
 audit_rules_privileged_commands_unix_chkpwd: true
 audit_rules_privileged_commands_userhelper: true
-audit_rules_session_events: true
+audit_rules_session_events_btmp: true
+audit_rules_session_events_utmp: true
+audit_rules_session_events_wtmp: true
 audit_rules_sysadmin_actions: true
 audit_rules_system_shutdown: true
 audit_rules_time_adjtimex: true
@@ -177,9 +178,6 @@ no_direct_root_logins: true
 no_empty_passwords: true
 no_reboot_needed: true
 no_rsh_trust_files: true
-package_rsh_server_removed: true
-package_talk_removed: true
-package_talk_server_removed: true
 package_telnet_removed: true
 package_telnet_server_removed: true
 package_xinetd_removed: true
@@ -201,11 +199,8 @@ service_autofs_disabled: true
 service_crond_enabled: true
 service_debug_shell_disabled: true
 service_kdump_disabled: true
-service_rexec_disabled: true
-service_rlogin_disabled: true
 service_telnet_disabled: true
 service_xinetd_disabled: true
-service_zebra_disabled: true
 sshd_allow_only_protocol2: true
 sshd_disable_compression: true
 sshd_disable_empty_passwords: true
