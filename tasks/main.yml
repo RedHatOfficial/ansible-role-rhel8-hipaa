@@ -743,7 +743,11 @@
   tags:
   - CCE-80935-0
   - DISA-STIG-RHEL-08-010020
-  - DISA-STIG-needed_rules
+  - DISA-STIG-RHEL-08-010270
+  - DISA-STIG-RHEL-08-010290
+  - DISA-STIG-RHEL-08-010291
+  - DISA-STIG-RHEL-08-010296
+  - DISA-STIG-RHEL-08-010297
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -761,7 +765,11 @@
   - restrict_strategy
   when:
   - DISA_STIG_RHEL_08_010020 | bool
-  - DISA_STIG_needed_rules | bool
+  - DISA_STIG_RHEL_08_010270 | bool
+  - DISA_STIG_RHEL_08_010290 | bool
+  - DISA_STIG_RHEL_08_010291 | bool
+  - DISA_STIG_RHEL_08_010296 | bool
+  - DISA_STIG_RHEL_08_010297 | bool
   - configure_crypto_policy | bool
   - high_severity | bool
   - low_complexity | bool
@@ -779,7 +787,11 @@
   tags:
   - CCE-80935-0
   - DISA-STIG-RHEL-08-010020
-  - DISA-STIG-needed_rules
+  - DISA-STIG-RHEL-08-010270
+  - DISA-STIG-RHEL-08-010290
+  - DISA-STIG-RHEL-08-010291
+  - DISA-STIG-RHEL-08-010296
+  - DISA-STIG-RHEL-08-010297
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -797,7 +809,11 @@
   - restrict_strategy
   when:
   - DISA_STIG_RHEL_08_010020 | bool
-  - DISA_STIG_needed_rules | bool
+  - DISA_STIG_RHEL_08_010270 | bool
+  - DISA_STIG_RHEL_08_010290 | bool
+  - DISA_STIG_RHEL_08_010291 | bool
+  - DISA_STIG_RHEL_08_010296 | bool
+  - DISA_STIG_RHEL_08_010297 | bool
   - configure_crypto_policy | bool
   - high_severity | bool
   - low_complexity | bool
@@ -815,7 +831,11 @@
   tags:
   - CCE-80935-0
   - DISA-STIG-RHEL-08-010020
-  - DISA-STIG-needed_rules
+  - DISA-STIG-RHEL-08-010270
+  - DISA-STIG-RHEL-08-010290
+  - DISA-STIG-RHEL-08-010291
+  - DISA-STIG-RHEL-08-010296
+  - DISA-STIG-RHEL-08-010297
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -833,7 +853,11 @@
   - restrict_strategy
   when:
   - DISA_STIG_RHEL_08_010020 | bool
-  - DISA_STIG_needed_rules | bool
+  - DISA_STIG_RHEL_08_010270 | bool
+  - DISA_STIG_RHEL_08_010290 | bool
+  - DISA_STIG_RHEL_08_010291 | bool
+  - DISA_STIG_RHEL_08_010296 | bool
+  - DISA_STIG_RHEL_08_010297 | bool
   - configure_crypto_policy | bool
   - high_severity | bool
   - low_complexity | bool
@@ -851,7 +875,11 @@
   tags:
   - CCE-80935-0
   - DISA-STIG-RHEL-08-010020
-  - DISA-STIG-needed_rules
+  - DISA-STIG-RHEL-08-010270
+  - DISA-STIG-RHEL-08-010290
+  - DISA-STIG-RHEL-08-010291
+  - DISA-STIG-RHEL-08-010296
+  - DISA-STIG-RHEL-08-010297
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -869,7 +897,11 @@
   - restrict_strategy
   when:
   - DISA_STIG_RHEL_08_010020 | bool
-  - DISA_STIG_needed_rules | bool
+  - DISA_STIG_RHEL_08_010270 | bool
+  - DISA_STIG_RHEL_08_010290 | bool
+  - DISA_STIG_RHEL_08_010291 | bool
+  - DISA_STIG_RHEL_08_010296 | bool
+  - DISA_STIG_RHEL_08_010297 | bool
   - configure_crypto_policy | bool
   - high_severity | bool
   - low_complexity | bool
@@ -881,7 +913,11 @@
   ansible.builtin.command: /usr/bin/update-crypto-policies --set {{ var_system_crypto_policy }}
   when:
   - DISA_STIG_RHEL_08_010020 | bool
-  - DISA_STIG_needed_rules | bool
+  - DISA_STIG_RHEL_08_010270 | bool
+  - DISA_STIG_RHEL_08_010290 | bool
+  - DISA_STIG_RHEL_08_010291 | bool
+  - DISA_STIG_RHEL_08_010296 | bool
+  - DISA_STIG_RHEL_08_010297 | bool
   - configure_crypto_policy | bool
   - high_severity | bool
   - low_complexity | bool
@@ -893,7 +929,11 @@
   tags:
   - CCE-80935-0
   - DISA-STIG-RHEL-08-010020
-  - DISA-STIG-needed_rules
+  - DISA-STIG-RHEL-08-010270
+  - DISA-STIG-RHEL-08-010290
+  - DISA-STIG-RHEL-08-010291
+  - DISA-STIG-RHEL-08-010296
+  - DISA-STIG-RHEL-08-010297
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -916,7 +956,6 @@
     state: absent
     regexp: (?i)^\s*CRYPTO_POLICY.*$
   when:
-  - DISA_STIG_RHEL_08_010287 | bool
   - configure_ssh_crypto_policy | bool
   - disable_strategy | bool
   - low_complexity | bool
@@ -926,7 +965,6 @@
   - '"kernel-core" in ansible_facts.packages'
   tags:
   - CCE-80939-2
-  - DISA-STIG-RHEL-08-010287
   - NIST-800-53-AC-17(2)
   - NIST-800-53-AC-17(a)
   - NIST-800-53-CM-6(a)
@@ -1413,7 +1451,7 @@
   - medium_disruption
   - no_reboot_needed
 
-- name: Read permission of GPG key directory
+- name: 'Ensure Red Hat GPG Key Installed: Read permission of GPG key directory'
   ansible.builtin.stat:
     path: /etc/pki/rpm-gpg/
   register: gpg_key_directory_permission
@@ -1446,7 +1484,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
 
-- name: Read signatures in GPG key
+- name: 'Ensure Red Hat GPG Key Installed: Read signatures in GPG key'
   ansible.builtin.command: gpg --show-keys --with-fingerprint --with-colons "/etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"
   changed_when: false
   register: gpg_fingerprints
@@ -1480,11 +1518,10 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
 
-- name: Set Fact - Installed GPG Fingerprints
+- name: 'Ensure Red Hat GPG Key Installed: Set Fact - Installed GPG Fingerprints'
   ansible.builtin.set_fact:
-    gpg_installed_fingerprints: '{{ gpg_fingerprints.stdout | regex_findall(''^pub.*
-
-      (?:^fpr[:]*)([0-9A-Fa-f]*)'', ''\1'') | list }}'
+    gpg_installed_fingerprints: '{{ gpg_fingerprints.stdout | regex_findall(''^pub.*\n(?:^fpr[:]*)([0-9A-Fa-f]*)'', ''\1'')
+      | list }}'
   tags:
   - CCE-80795-8
   - CJIS-5.10.4.1
@@ -1513,7 +1550,7 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
 
-- name: Set Fact - Valid fingerprints
+- name: 'Ensure Red Hat GPG Key Installed: Set Fact - Valid fingerprints'
   ansible.builtin.set_fact:
     gpg_valid_fingerprints:
     - 567E347AD0044ADE55BA8A5F199E2F91FD431D51
@@ -1546,10 +1583,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
 
-- name: Import RedHat GPG key
-  ansible.builtin.rpm_key:
-    state: present
-    key: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+- name: 'Ensure Red Hat GPG Key Installed: Import RedHat GPG key'
+  ansible.builtin.command: rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
   when:
   - DISA_STIG_RHEL_08_010019 | bool
   - ensure_redhat_gpgkey_installed | bool
@@ -2248,8 +2283,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
-  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
   - ( "grub2-common" in ansible_facts.packages and "kernel-core" in ansible_facts.packages )
+  - not ('/sys/firmware/efi' is directory)
   - not ( ansible_virtualization_type in ["docker", "lxc", "openvz", "podman", "container"] )
   tags:
   - CCE-80800-6
@@ -2278,8 +2313,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
-  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
   - ( "grub2-common" in ansible_facts.packages and "kernel-core" in ansible_facts.packages )
+  - not ('/sys/firmware/efi' is directory)
   - not ( ansible_virtualization_type in ["docker", "lxc", "openvz", "podman", "container"] )
   tags:
   - CCE-80800-6
@@ -2309,8 +2344,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
-  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
   - ( "grub2-common" in ansible_facts.packages and "kernel-core" in ansible_facts.packages )
+  - not ('/sys/firmware/efi' is directory)
   - not ( ansible_virtualization_type in ["docker", "lxc", "openvz", "podman", "container"] )
   - file_exists.stat is defined and file_exists.stat.exists
   tags:
@@ -2339,8 +2374,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
-  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
   - ( "grub2-common" in ansible_facts.packages and "kernel-core" in ansible_facts.packages )
+  - not ('/sys/firmware/efi' is directory)
   - not ( ansible_virtualization_type in ["docker", "lxc", "openvz", "podman", "container"] )
   tags:
   - CCE-80805-5
@@ -2369,8 +2404,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
-  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
   - ( "grub2-common" in ansible_facts.packages and "kernel-core" in ansible_facts.packages )
+  - not ('/sys/firmware/efi' is directory)
   - not ( ansible_virtualization_type in ["docker", "lxc", "openvz", "podman", "container"] )
   tags:
   - CCE-80805-5
@@ -2400,8 +2435,8 @@
   - low_disruption | bool
   - medium_severity | bool
   - no_reboot_needed | bool
-  - '"/boot/efi" not in ansible_mounts | map(attribute="mount") | list'
   - ( "grub2-common" in ansible_facts.packages and "kernel-core" in ansible_facts.packages )
+  - not ('/sys/firmware/efi' is directory)
   - not ( ansible_virtualization_type in ["docker", "lxc", "openvz", "podman", "container"] )
   - file_exists.stat is defined and file_exists.stat.exists
   tags:
@@ -2626,11 +2661,40 @@
   - reboot_required
   - sysctl_kernel_dmesg_restrict
 
+- name: Restrict Access to Kernel Message Buffer - Comment out any occurrences of kernel.dmesg_restrict from /etc/sysctl.conf
+  ansible.builtin.replace:
+    path: '{{ item }}'
+    regexp: ^[\s]*kernel.dmesg_restrict
+    replace: '#kernel.dmesg_restrict'
+  with_fileglob:
+  - /etc/sysctl.conf
+  when:
+  - DISA_STIG_RHEL_08_010375 | bool
+  - disable_strategy | bool
+  - low_complexity | bool
+  - low_severity | bool
+  - medium_disruption | bool
+  - reboot_required | bool
+  - sysctl_kernel_dmesg_restrict | bool
+  - '"kernel-core" in ansible_facts.packages'
+  tags:
+  - CCE-80913-7
+  - DISA-STIG-RHEL-08-010375
+  - NIST-800-171-3.1.5
+  - NIST-800-53-SI-11(a)
+  - NIST-800-53-SI-11(b)
+  - disable_strategy
+  - low_complexity
+  - low_severity
+  - medium_disruption
+  - reboot_required
+  - sysctl_kernel_dmesg_restrict
+
 - name: Restrict Access to Kernel Message Buffer - Ensure sysctl kernel.dmesg_restrict is set to 1
   ansible.posix.sysctl:
     name: kernel.dmesg_restrict
     value: '1'
-    sysctl_file: /etc/sysctl.conf
+    sysctl_file: /etc/sysctl.d/kernel_dmesg_restrict.conf
     state: present
     reload: true
   when:
@@ -2771,11 +2835,40 @@
   - reboot_required
   - sysctl_fs_suid_dumpable
 
+- name: Disable Core Dumps for SUID programs - Comment out any occurrences of fs.suid_dumpable from /etc/sysctl.conf
+  ansible.builtin.replace:
+    path: '{{ item }}'
+    regexp: ^[\s]*fs.suid_dumpable
+    replace: '#fs.suid_dumpable'
+  with_fileglob:
+  - /etc/sysctl.conf
+  when:
+  - disable_strategy | bool
+  - low_complexity | bool
+  - medium_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - sysctl_fs_suid_dumpable | bool
+  - '"kernel-core" in ansible_facts.packages'
+  tags:
+  - CCE-80912-9
+  - NIST-800-53-SI-11(a)
+  - NIST-800-53-SI-11(b)
+  - PCI-DSSv4-3.3
+  - PCI-DSSv4-3.3.1
+  - PCI-DSSv4-3.3.1.1
+  - disable_strategy
+  - low_complexity
+  - medium_disruption
+  - medium_severity
+  - reboot_required
+  - sysctl_fs_suid_dumpable
+
 - name: Disable Core Dumps for SUID programs - Ensure sysctl fs.suid_dumpable is set to 0
   ansible.posix.sysctl:
     name: fs.suid_dumpable
     value: '0'
-    sysctl_file: /etc/sysctl.conf
+    sysctl_file: /etc/sysctl.d/fs_suid_dumpable.conf
     state: present
     reload: true
   when:
@@ -3010,11 +3103,46 @@
   - reboot_required
   - sysctl_kernel_randomize_va_space
 
+- name: Enable Randomized Layout of Virtual Address Space - Comment out any occurrences of kernel.randomize_va_space from
+    /etc/sysctl.conf
+  ansible.builtin.replace:
+    path: '{{ item }}'
+    regexp: ^[\s]*kernel.randomize_va_space
+    replace: '#kernel.randomize_va_space'
+  with_fileglob:
+  - /etc/sysctl.conf
+  when:
+  - DISA_STIG_RHEL_08_010430 | bool
+  - disable_strategy | bool
+  - low_complexity | bool
+  - medium_disruption | bool
+  - medium_severity | bool
+  - reboot_required | bool
+  - sysctl_kernel_randomize_va_space | bool
+  - '"kernel-core" in ansible_facts.packages'
+  tags:
+  - CCE-80916-0
+  - DISA-STIG-RHEL-08-010430
+  - NIST-800-171-3.1.7
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-SC-30
+  - NIST-800-53-SC-30(2)
+  - PCI-DSS-Req-2.2.1
+  - PCI-DSSv4-3.3
+  - PCI-DSSv4-3.3.1
+  - PCI-DSSv4-3.3.1.1
+  - disable_strategy
+  - low_complexity
+  - medium_disruption
+  - medium_severity
+  - reboot_required
+  - sysctl_kernel_randomize_va_space
+
 - name: Enable Randomized Layout of Virtual Address Space - Ensure sysctl kernel.randomize_va_space is set to 2
   ansible.posix.sysctl:
     name: kernel.randomize_va_space
     value: '2'
-    sysctl_file: /etc/sysctl.conf
+    sysctl_file: /etc/sysctl.d/kernel_randomize_va_space.conf
     state: present
     reload: true
   when:
@@ -3273,7 +3401,7 @@
 - name: Ensure SELinux State is Enforcing - Check current SELinux state
   ansible.builtin.command:
     cmd: getenforce
-  register: selinux_state
+  register: current_selinux_state
   check_mode: false
   changed_when: false
   when:
@@ -3370,7 +3498,7 @@
   - restrict_strategy | bool
   - selinux_state | bool
   - '"kernel-core" in ansible_facts.packages'
-  - selinux_state.stdout | lower != var_selinux_state
+  - current_selinux_state.stdout | lower != var_selinux_state
   tags:
   - CCE-80869-1
   - DISA-STIG-RHEL-08-010170
@@ -3802,6 +3930,9 @@
   - restrict_strategy | bool
   - sshd_allow_only_protocol2 | bool
   - '"kernel-core" in ansible_facts.packages'
+  - '"openssh-server" in ansible_facts.packages and (((((ansible_facts.packages["openssh-server"] | last)["epoch"]) != None)
+    | ternary((ansible_facts.packages["openssh-server"] | last)["epoch"] ~ ":", "0:")) + ((ansible_facts.packages["openssh-server"]
+    | last)["version"] | split("-") | first)) is version("0:7.0", "<")'
   tags:
   - CCE-80894-9
   - CJIS-5.5.6
@@ -8435,10 +8566,10 @@
   - restrict_strategy
 
 - name: Record Events that Modify User/Group Information - /etc/passwd - Search /etc/audit/rules.d for other rules with specified
-    key audit_rules_usergroup_modification_passwd
+    key audit_rules_usergroup_modification
   ansible.builtin.find:
     paths: /etc/audit/rules.d
-    contains: ^.*(?:-F key=|-k\s+)audit_rules_usergroup_modification_passwd$
+    contains: ^.*(?:-F key=|-k\s+)audit_rules_usergroup_modification$
     patterns: '*.rules'
   register: find_watch_key
   when:
@@ -8473,11 +8604,11 @@
   - no_reboot_needed
   - restrict_strategy
 
-- name: Record Events that Modify User/Group Information - /etc/passwd - Use /etc/audit/rules.d/audit_rules_usergroup_modification_passwd.rules
+- name: Record Events that Modify User/Group Information - /etc/passwd - Use /etc/audit/rules.d/audit_rules_usergroup_modification.rules
     as the recipient for the rule
   ansible.builtin.set_fact:
     all_files:
-    - /etc/audit/rules.d/audit_rules_usergroup_modification_passwd.rules
+    - /etc/audit/rules.d/audit_rules_usergroup_modification.rules
   when:
   - DISA_STIG_RHEL_08_030150 | bool
   - audit_rules_usergroup_modification_passwd | bool
@@ -8551,7 +8682,7 @@
 - name: Record Events that Modify User/Group Information - /etc/passwd - Add watch rule for /etc/passwd in /etc/audit/rules.d/
   ansible.builtin.lineinfile:
     path: '{{ all_files[0] }}'
-    line: -w /etc/passwd -p wa -k audit_rules_usergroup_modification_passwd
+    line: -w /etc/passwd -p wa -k audit_rules_usergroup_modification
     create: true
     mode: '0600'
   when:
@@ -8626,7 +8757,7 @@
 
 - name: Record Events that Modify User/Group Information - /etc/passwd - Add watch rule for /etc/passwd in /etc/audit/audit.rules
   ansible.builtin.lineinfile:
-    line: -w /etc/passwd -p wa -k audit_rules_usergroup_modification_passwd
+    line: -w /etc/passwd -p wa -k audit_rules_usergroup_modification
     state: present
     dest: /etc/audit/audit.rules
     create: true
