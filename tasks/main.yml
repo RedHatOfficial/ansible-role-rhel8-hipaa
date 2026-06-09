@@ -76,7 +76,32 @@
   - no_reboot_needed
   - sebool_selinuxuser_execstack
 
-- name: 'Uninstall xinetd Package: Ensure xinetd is removed'
+- name: Ensure postfix is installed
+  ansible.builtin.package:
+    name: postfix
+    state: present
+  when:
+  - DISA_STIG_RHEL_08_030030 | bool
+  - enable_strategy | bool
+  - low_complexity | bool
+  - low_disruption | bool
+  - medium_severity | bool
+  - no_reboot_needed | bool
+  - package_postfix_installed | bool
+  - '"kernel-core" in ansible_facts.packages'
+  tags:
+  - CCE-85983-5
+  - DISA-STIG-RHEL-08-030030
+  - PCI-DSSv4-10.5
+  - PCI-DSSv4-10.5.1
+  - enable_strategy
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - package_postfix_installed
+
+- name: 'Uninstall xinetd package if not used by network services: Ensure xinetd is removed'
   ansible.builtin.package:
     name: xinetd
     state: absent
@@ -4472,6 +4497,89 @@
   - PCI-DSSv4-10.7
   - PCI-DSSv4-10.7.2
   - grub2_audit_argument
+  - low_disruption
+  - low_severity
+  - medium_complexity
+  - reboot_required
+  - restrict_strategy
+
+- name: Check if audit_backlog_limit argument is already present in /etc/default/grub
+  ansible.builtin.slurp:
+    src: /etc/default/grub
+  register: etc_default_grub
+  when:
+  - DISA_STIG_RHEL_08_030602 | bool
+  - grub2_audit_backlog_limit_argument | bool
+  - low_disruption | bool
+  - low_severity | bool
+  - medium_complexity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"kernel-core" in ansible_facts.packages'
+  - '"grub2-common" in ansible_facts.packages'
+  tags:
+  - CCE-80943-4
+  - DISA-STIG-RHEL-08-030602
+  - NIST-800-53-CM-6(a)
+  - PCI-DSSv4-10.7
+  - PCI-DSSv4-10.7.2
+  - grub2_audit_backlog_limit_argument
+  - low_disruption
+  - low_severity
+  - medium_complexity
+  - reboot_required
+  - restrict_strategy
+
+- name: Check if audit_backlog_limit argument is already present
+  ansible.builtin.command: /sbin/grubby --info=ALL
+  register: grubby_info
+  check_mode: false
+  changed_when: false
+  failed_when: false
+  when:
+  - DISA_STIG_RHEL_08_030602 | bool
+  - grub2_audit_backlog_limit_argument | bool
+  - low_disruption | bool
+  - low_severity | bool
+  - medium_complexity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"kernel-core" in ansible_facts.packages'
+  - '"grub2-common" in ansible_facts.packages'
+  tags:
+  - CCE-80943-4
+  - DISA-STIG-RHEL-08-030602
+  - NIST-800-53-CM-6(a)
+  - PCI-DSSv4-10.7
+  - PCI-DSSv4-10.7.2
+  - grub2_audit_backlog_limit_argument
+  - low_disruption
+  - low_severity
+  - medium_complexity
+  - reboot_required
+  - restrict_strategy
+
+- name: Update grub defaults and the bootloader menu
+  ansible.builtin.command: /sbin/grubby --update-kernel=ALL --args="audit_backlog_limit={{ var_audit_backlog_limit }}"
+  when:
+  - DISA_STIG_RHEL_08_030602 | bool
+  - grub2_audit_backlog_limit_argument | bool
+  - low_disruption | bool
+  - low_severity | bool
+  - medium_complexity | bool
+  - reboot_required | bool
+  - restrict_strategy | bool
+  - '"kernel-core" in ansible_facts.packages'
+  - '"grub2-common" in ansible_facts.packages'
+  - (grubby_info.stdout is not search('audit_backlog_limit=' ~ var_audit_backlog_limit)) or ((etc_default_grub['content']
+    | b64decode) is not search('audit_backlog_limit=' ~ var_audit_backlog_limit))
+  tags:
+  - CCE-80943-4
+  - DISA-STIG-RHEL-08-030602
+  - NIST-800-53-CM-6(a)
+  - PCI-DSSv4-10.7
+  - PCI-DSSv4-10.7.2
+  - grub2_audit_backlog_limit_argument
   - low_disruption
   - low_severity
   - medium_complexity
