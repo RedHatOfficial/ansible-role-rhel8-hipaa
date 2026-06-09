@@ -9,6 +9,7 @@ var_selinuxuser_execheap: 'false'
 var_selinuxuser_execmod: 'true'
 var_selinuxuser_execstack: 'false'
 var_sshd_disable_compression: 'no'
+var_audit_backlog_limit: '8192'
 var_audit_failure_mode: '2'
 var_accounts_passwords_pam_faillock_dir: /var/log/faillock
 var_auditd_flush: data
@@ -35,6 +36,7 @@ DISA_STIG_RHEL_08_010830: true
 DISA_STIG_RHEL_08_020330: true
 DISA_STIG_RHEL_08_020331: true
 DISA_STIG_RHEL_08_020332: true
+DISA_STIG_RHEL_08_030030: true
 DISA_STIG_RHEL_08_030121: true
 DISA_STIG_RHEL_08_030130: true
 DISA_STIG_RHEL_08_030140: true
@@ -71,6 +73,7 @@ DISA_STIG_RHEL_08_030550: true
 DISA_STIG_RHEL_08_030590: true
 DISA_STIG_RHEL_08_030600: true
 DISA_STIG_RHEL_08_030601: true
+DISA_STIG_RHEL_08_030602: true
 DISA_STIG_RHEL_08_030690: true
 DISA_STIG_RHEL_08_040000: true
 DISA_STIG_RHEL_08_040070: true
@@ -168,6 +171,7 @@ ensure_redhat_gpgkey_installed: true
 file_groupowner_grub2_cfg: true
 file_owner_grub2_cfg: true
 grub2_audit_argument: true
+grub2_audit_backlog_limit_argument: true
 grub2_disable_interactive_boot: true
 grub2_enable_selinux: true
 high_complexity: true
@@ -182,6 +186,7 @@ no_direct_root_logins: true
 no_empty_passwords: true
 no_reboot_needed: true
 no_rsh_trust_files: true
+package_postfix_installed: true
 package_telnet_removed: true
 package_telnet_server_removed: true
 package_xinetd_removed: true
