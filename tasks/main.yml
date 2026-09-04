@@ -16,9 +16,9 @@
   - no_reboot_needed | bool
   - sebool_selinuxuser_execheap | bool
   - '"kernel-core" in ansible_facts.packages'
-  - ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline or lookup("env", "container")
-    == "bwrap-osbuild" or ansible_facts.selinux.status != "disabled" )
+  - ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline or lookup("env", "container") == "bwrap-osbuild" or ansible_facts.selinux.status
+    != "disabled" )
   tags:
   - CCE-80949-1
   - enable_strategy
@@ -40,9 +40,9 @@
   - no_reboot_needed | bool
   - sebool_selinuxuser_execmod | bool
   - '"kernel-core" in ansible_facts.packages'
-  - ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline or lookup("env", "container")
-    == "bwrap-osbuild" or ansible_facts.selinux.status != "disabled" )
+  - ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline or lookup("env", "container") == "bwrap-osbuild" or ansible_facts.selinux.status
+    != "disabled" )
   tags:
   - CCE-80950-9
   - enable_strategy
@@ -64,9 +64,9 @@
   - no_reboot_needed | bool
   - sebool_selinuxuser_execstack | bool
   - '"kernel-core" in ansible_facts.packages'
-  - ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline or lookup("env", "container")
-    == "bwrap-osbuild" or ansible_facts.selinux.status != "disabled" )
+  - ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline or lookup("env", "container") == "bwrap-osbuild" or ansible_facts.selinux.status
+    != "disabled" )
   tags:
   - CCE-80951-7
   - enable_strategy
@@ -485,8 +485,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_hashes | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   - ansible_distribution in [ "Fedora", "RedHat", "CentOS", "OracleLinux", "AlmaLinux" ]
   tags:
   - CCE-80857-6
@@ -518,8 +518,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_hashes | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   - ansible_distribution == "SLES"
   tags:
   - CCE-80857-6
@@ -555,8 +555,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_hashes | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   - (package_manager_reinstall_cmd is defined)
   tags:
   - CCE-80857-6
@@ -592,8 +592,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_hashes | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   - files_with_incorrect_hash.stdout_lines is defined
   - (files_with_incorrect_hash.stdout_lines | length > 0)
   tags:
@@ -626,8 +626,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_hashes | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   - files_with_incorrect_hash.stdout_lines is defined
   - (package_manager_reinstall_cmd is defined and (files_with_incorrect_hash.stdout_lines | length > 0))
   tags:
@@ -664,8 +664,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_permissions | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   tags:
   - CCE-80858-4
   - CJIS-5.10.4.1
@@ -701,8 +701,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_permissions | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   - (files_with_incorrect_permissions.stdout_lines | length > 0)
   tags:
   - CCE-80858-4
@@ -735,8 +735,8 @@
   - no_reboot_needed | bool
   - restrict_strategy | bool
   - rpm_verify_permissions | bool
-  - not ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline )
+  - not ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline )
   - (files_with_incorrect_permissions.stdout_lines | length > 0)
   tags:
   - CCE-80858-4
@@ -1160,6 +1160,7 @@
 
 - name: Require Credential Prompting for Remote Access in GNOME3
   community.general.ini_file:
+    mode: 420
     dest: /etc/dconf/db/local.d/00-security-settings
     section: org/gnome/Vino
     option: authentication-methods
@@ -1187,6 +1188,7 @@
 
 - name: Prevent user modification of GNOME3 Credential Prompting for Remote Access
   ansible.builtin.lineinfile:
+    mode: 420
     path: /etc/dconf/db/local.d/locks/00-security-settings-lock
     regexp: ^/org/gnome/Vino/authentication-methods$
     line: /org/gnome/Vino/authentication-methods
@@ -1233,6 +1235,7 @@
 
 - name: Require Encryption for Remote Access in GNOME3
   community.general.ini_file:
+    mode: 420
     dest: /etc/dconf/db/local.d/00-security-settings
     section: org/gnome/Vino
     option: require-encryption
@@ -1263,6 +1266,7 @@
 
 - name: Prevent user modification of GNOME3 Encryption for Remote Access
   ansible.builtin.lineinfile:
+    mode: 420
     path: /etc/dconf/db/local.d/locks/00-security-settings-lock
     regexp: ^/org/gnome/Vino/require-encryption$
     line: /org/gnome/Vino/require-encryption
@@ -1371,6 +1375,7 @@
       value: 1
       no_extra_spaces: true
       create: true
+      mode: 420
   when:
   - DISA_STIG_RHEL_08_010371 | bool
   - ensure_gpgcheck_local_packages | bool
@@ -1793,6 +1798,7 @@
     regexp: ^CtrlAltDelBurstAction
     line: CtrlAltDelBurstAction=none
     create: true
+    mode: 420
   when:
   - DISA_STIG_RHEL_08_040172 | bool
   - disable_ctrlaltdel_burstaction | bool
@@ -2221,6 +2227,7 @@
   ansible.builtin.copy:
     dest: /etc/securetty
     content: ''
+    mode: 420
   when:
   - low_complexity | bool
   - low_disruption | bool
@@ -2486,6 +2493,7 @@
     regexp: ^\*\.\*
     line: '*.* @@{{ rsyslog_remote_loghost_address }}'
     create: true
+    mode: 420
   when:
   - DISA_STIG_RHEL_08_030690 | bool
   - low_complexity | bool
@@ -2514,6 +2522,7 @@
     dest: /etc/modprobe.d/usb-storage.conf
     regexp: install\s+usb-storage
     line: install usb-storage /bin/false
+    mode: 420
   when:
   - DISA_STIG_RHEL_08_040080 | bool
   - disable_strategy | bool
@@ -2545,6 +2554,7 @@
     dest: /etc/modprobe.d/usb-storage.conf
     regexp: ^blacklist usb-storage$
     line: blacklist usb-storage
+    mode: 420
   when:
   - DISA_STIG_RHEL_08_040080 | bool
   - disable_strategy | bool
@@ -3514,6 +3524,7 @@
     state: touch
     access_time: preserve
     modification_time: preserve
+    mode: 420
   when:
   - DISA_STIG_RHEL_08_010170 | bool
   - high_severity | bool
@@ -3555,9 +3566,9 @@
   - no_reboot_needed | bool
   - sebool_selinuxuser_execheap | bool
   - '"kernel-core" in ansible_facts.packages'
-  - ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline or lookup("env", "container")
-    == "bwrap-osbuild" or ansible_facts.selinux.status != "disabled" )
+  - ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline or lookup("env", "container") == "bwrap-osbuild" or ansible_facts.selinux.status
+    != "disabled" )
   tags:
   - CCE-80949-1
   - enable_strategy
@@ -3580,9 +3591,9 @@
   - no_reboot_needed | bool
   - sebool_selinuxuser_execmod | bool
   - '"kernel-core" in ansible_facts.packages'
-  - ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline or lookup("env", "container")
-    == "bwrap-osbuild" or ansible_facts.selinux.status != "disabled" )
+  - ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline or lookup("env", "container") == "bwrap-osbuild" or ansible_facts.selinux.status
+    != "disabled" )
   tags:
   - CCE-80950-9
   - enable_strategy
@@ -3605,9 +3616,9 @@
   - no_reboot_needed | bool
   - sebool_selinuxuser_execstack | bool
   - '"kernel-core" in ansible_facts.packages'
-  - ( "kernel-core" in ansible_facts.packages and "rpm-ostree" in ansible_facts.packages and "bootc" in ansible_facts.packages
-    and not "openshift-kubelet" in ansible_facts.packages and "ostree" in ansible_proc_cmdline or lookup("env", "container")
-    == "bwrap-osbuild" or ansible_facts.selinux.status != "disabled" )
+  - ( "kernel-core" in ansible_facts.packages and "bootc" in ansible_facts.packages and not "openshift-kubelet" in ansible_facts.packages
+    and "ostree" in ansible_proc_cmdline or lookup("env", "container") == "bwrap-osbuild" or ansible_facts.selinux.status
+    != "disabled" )
   tags:
   - CCE-80951-7
   - enable_strategy
@@ -3822,6 +3833,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*ClientAliveCountMax\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -3831,6 +3843,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*ClientAliveCountMax\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -3838,6 +3851,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*ClientAliveCountMax\s+
+      mode: '0600'
       line: ClientAliveCountMax 0
       state: present
       insertbefore: BOF
@@ -3874,6 +3888,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*HostbasedAuthentication\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -3883,6 +3898,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*HostbasedAuthentication\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -3890,6 +3906,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*HostbasedAuthentication\s+
+      mode: '0600'
       line: HostbasedAuthentication no
       state: present
       insertbefore: BOF
@@ -3927,6 +3944,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Protocol\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -3936,6 +3954,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Protocol\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -3943,6 +3962,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Protocol\s+
+      mode: '0600'
       line: Protocol 2
       state: present
       insertbefore: BOF
@@ -3955,8 +3975,8 @@
   - restrict_strategy | bool
   - sshd_allow_only_protocol2 | bool
   - '"kernel-core" in ansible_facts.packages'
-  - '"openssh-server" in ansible_facts.packages and (((((ansible_facts.packages["openssh-server"] | last)["epoch"]) != None)
-    | ternary((ansible_facts.packages["openssh-server"] | last)["epoch"] ~ ":", "0:")) + ((ansible_facts.packages["openssh-server"]
+  - '"openssh-server" in ansible_facts.packages and (((((ansible_facts.packages["openssh-server"] | last)["epoch"]) | default(0)
+    | int) | ternary((ansible_facts.packages["openssh-server"] | last)["epoch"] ~ ":", "0:")) + ((ansible_facts.packages["openssh-server"]
     | last)["version"] | split("-") | first)) is version("0:7.0", "<")'
   tags:
   - CCE-80894-9
@@ -3983,6 +4003,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Compression\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -3992,6 +4013,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Compression\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -3999,7 +4021,8 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Compression\s+
-      line: Compression {{ var_sshd_disable_compression }}
+      mode: '0600'
+      line: Compression no
       state: present
       insertbefore: BOF
       validate: /usr/sbin/sshd -t -f %s
@@ -4032,6 +4055,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitEmptyPasswords\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -4041,6 +4065,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitEmptyPasswords\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -4048,6 +4073,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitEmptyPasswords\s+
+      mode: '0600'
       line: PermitEmptyPasswords no
       state: present
       insertbefore: BOF
@@ -4088,6 +4114,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*GSSAPIAuthentication\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -4097,6 +4124,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*GSSAPIAuthentication\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -4104,6 +4132,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*GSSAPIAuthentication\s+
+      mode: '0600'
       line: GSSAPIAuthentication no
       state: present
       insertbefore: BOF
@@ -4139,6 +4168,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*KerberosAuthentication\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -4148,6 +4178,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*KerberosAuthentication\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -4155,6 +4186,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*KerberosAuthentication\s+
+      mode: '0600'
       line: KerberosAuthentication no
       state: present
       insertbefore: BOF
@@ -4190,6 +4222,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitRootLogin\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -4199,6 +4232,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitRootLogin\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -4206,6 +4240,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitRootLogin\s+
+      mode: '0600'
       line: PermitRootLogin no
       state: present
       insertbefore: BOF
@@ -4249,6 +4284,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitUserEnvironment\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -4258,6 +4294,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitUserEnvironment\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -4265,6 +4302,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*PermitUserEnvironment\s+
+      mode: '0600'
       line: PermitUserEnvironment no
       state: present
       insertbefore: BOF
@@ -4304,6 +4342,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*StrictModes\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -4313,6 +4352,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*StrictModes\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -4320,6 +4360,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*StrictModes\s+
+      mode: '0600'
       line: StrictModes yes
       state: present
       insertbefore: BOF
@@ -4354,6 +4395,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Banner\s+
+      mode: '0600'
       state: absent
     check_mode: true
     changed_when: false
@@ -4363,6 +4405,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Banner\s+
+      mode: '0600'
       state: absent
     when: dupes.found is defined and dupes.found > 1
   - name: Insert correct line to /etc/ssh/sshd_config
@@ -4370,6 +4413,7 @@
       path: /etc/ssh/sshd_config
       create: true
       regexp: (?i)(?i)^\s*Banner\s+
+      mode: '0600'
       line: Banner /etc/issue
       state: present
       insertbefore: BOF
@@ -24205,6 +24249,7 @@
     regexp: ^active
     line: active = yes
     create: true
+    mode: 416
   when:
   - auditd_audispd_syslog_plugin_activated | bool
   - configure_strategy | bool
@@ -24237,6 +24282,7 @@
     line: flush = {{ var_auditd_flush }}
     state: present
     create: true
+    mode: u-x,g-wx,o-rwx
   when:
   - auditd_data_retention_flush | bool
   - low_complexity | bool
