@@ -8,7 +8,6 @@ var_selinux_state: enforcing
 var_selinuxuser_execheap: 'false'
 var_selinuxuser_execmod: 'true'
 var_selinuxuser_execstack: 'false'
-var_sshd_disable_compression: 'no'
 var_audit_backlog_limit: '8192'
 var_audit_failure_mode: '2'
 var_accounts_passwords_pam_faillock_dir: /var/log/faillock
